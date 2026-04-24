@@ -235,6 +235,9 @@ export interface TeamConfig {
   cloudId: string;
   projectKey: string;
   beProject: string;
+  // Sprint ID is mutated at runtime: if config has null/0 (the default),
+  // the CLI auto-detects the currently open sprint via Jira. Override
+  // with the SPRINT_ID env var to backfill a past sprint.
   sprintId: number;
   sprintBaseUrl: string;
   team: {

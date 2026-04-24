@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import type { TeamConfig } from './model/types.ts';
+import type { JiraClient } from './jira/client.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,6 +15,15 @@ export function loadTeamConfig(): TeamConfig {
   if (process.env.CLOUD_ID) parsed.cloudId = process.env.CLOUD_ID;
   if (process.env.SPRINT_ID) parsed.sprintId = Number(process.env.SPRINT_ID);
   return parsed;
+}
+
+// Auto-detect the active sprint when config has null/0. SPRINT_ID env
+// var (loaded via loadTeamConfig) wins → useful for backfilling reports.
+export async function ensureSprintId(cfg: TeamConfig, client: JiraClient): Promise<number> {
+  if (cfg.sprintId && Number.isFinite(cfg.sprintId) && cfg.sprintId > 0) return cfg.sprintId;
+  const id = await client.resolveActiveSprintId(cfg.projectKey);
+  cfg.sprintId = id;
+  return id;
 }
 
 export function requireEnv(name: string): string {

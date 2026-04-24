@@ -98,4 +98,32 @@ export class JiraClient {
   }> {
     return this.request(`/rest/agile/1.0/sprint/${id}`);
   }
+
+  // Find the currently active sprint for a project by inspecting any
+  // ticket assigned to an open sprint. Avoids hard-coding boardId.
+  // Returns the *most recently started* active sprint (in case of overlaps).
+  async resolveActiveSprintId(projectKey: string): Promise<number> {
+    const jql = `project = ${projectKey} AND sprint in openSprints() ORDER BY updated DESC`;
+    const issues = await this.searchAll(jql, ['customfield_10007'], { pageSize: 50 });
+    if (!issues.length) {
+      throw new Error(`No open sprint found for project ${projectKey}`);
+    }
+    const seen = new Map<number, { startDate?: string; state?: string }>();
+    for (const issue of issues) {
+      const sprintField = issue.fields['customfield_10007'];
+      if (!Array.isArray(sprintField)) continue;
+      for (const s of sprintField) {
+        if (s && typeof s === 'object' && s.state === 'active' && typeof s.id === 'number') {
+          if (!seen.has(s.id)) seen.set(s.id, { startDate: s.startDate, state: s.state });
+        }
+      }
+    }
+    if (!seen.size) throw new Error(`No active sprint detected in project ${projectKey}`);
+    const sorted = [...seen.entries()].sort((a, b) => {
+      const ad = a[1].startDate ?? '';
+      const bd = b[1].startDate ?? '';
+      return bd.localeCompare(ad); // newest first
+    });
+    return sorted[0]![0];
+  }
 }

@@ -4,7 +4,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { loadTeamConfig, loadJiraAuth } from '../config.ts';
+import { loadTeamConfig, loadJiraAuth, ensureSprintId } from '../config.ts';
 import { JiraClient } from '../jira/client.ts';
 import { buildReport } from '../analyze/index.ts';
 import { renderSnapshot } from '../render/snapshot.ts';
@@ -44,6 +44,7 @@ async function main(): Promise<void> {
   const auth = loadJiraAuth(cfg);
   const client = new JiraClient(auth);
 
+  await ensureSprintId(cfg, client);
   console.error(`[snapshot] variant=${variant} sprint=${cfg.sprintId}`);
   const report = await buildReport(client, cfg, variant);
   const html = renderSnapshot(report, cfg);
