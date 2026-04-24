@@ -1,0 +1,29 @@
+{
+  "cloudId": "657e24cd-f643-4482-aba5-7e848607df28",
+  "projectKey": "WEB",
+  "beProject": "WEBBE",
+  "sprintId": 20579,
+  "sprintBaseUrl": "https://newsiteam.atlassian.net",
+  "team": {
+    "pm": "Ehor Havrylenko",
+    "po": "Nadiia Horbenko",
+    "devs": [
+      "Mykyta Chaika",
+      "Vitalii Lazarenko",
+      "Anastasiia Motsukh",
+      "Maksym Rozhaiev"
+    ],
+    "qa": [
+      "Oleksandr Mekhed",
+      "Anna Shyrokova",
+      "Mykhailenko Mykhailo",
+      "Iryna Partaloga"
+    ]
+  },
+  "slackTags": {
+    "team": "@health-coaching_team",
+    "devs": "@health-coaching_devs",
+    "qa": "@health-coaching_qa",
+    "po": "@Nadiia Horbenko"
+  }
+}

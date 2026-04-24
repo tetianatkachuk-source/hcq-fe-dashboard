@@ -1,0 +1,47 @@
+name: snapshot
+
+on:
+  schedule:
+    # 08:30 Europe/Kiev on Mon-Fri. Kiev is UTC+2 winter / UTC+3 summer.
+    # Two cron entries cover both DST windows — one will fire per day.
+    - cron: '30 6 * * 1-5'  # winter (Kiev = UTC+2)
+    - cron: '30 5 * * 1-5'  # summer (Kiev = UTC+3)
+  workflow_dispatch:
+    inputs:
+      variant:
+        description: 'Variant (daily | pulse | auto)'
+        required: false
+        default: 'auto'
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Kyiv
+      JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+      JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+      CLOUD_ID: ${{ secrets.CLOUD_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile=false
+      - name: Generate snapshot
+        run: pnpm snapshot --variant ${{ github.event.inputs.variant || 'auto' }}
+      - name: Commit & push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(snapshot): ${{ github.run_id }}'
+          file_pattern: 'docs/**'

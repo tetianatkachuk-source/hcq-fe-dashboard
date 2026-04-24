@@ -1,0 +1,25 @@
+{
+  "name": "hcq-fe-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dynamic Daily Scrum dashboard for HCQ FE team (Jira → HTML + live dashboard)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "snapshot": "tsx src/cli/snapshot.ts",
+    "live": "tsx src/cli/live.ts",
+    "build:live": "tsx scripts/build-live.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "esbuild": "^0.21.5",
+    "tsx": "^4.15.6",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
+  }
+}

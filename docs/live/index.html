@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>HCQ FE — Live Dashboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{ margin:0; font:14px -apple-system,Segoe UI,Roboto,sans-serif; color:#0f172a; background:#f5f6f8; }
+.topbar{ background:#fff; border-bottom:1px solid #e4e7ec; padding:14px 24px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+.topbar h1{ margin:0; font-size:18px; }
+.topbar a{ color:#2563eb; text-decoration:none; font-size:13px; }
+.filters{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-left:auto; }
+.filters label{ font-size:12px; color:#64748b; }
+.filters select{ border:1px solid #e4e7ec; border-radius:6px; padding:4px 8px; font-size:12px; background:#fff; }
+.status-filters{ display:flex; gap:4px; }
+.status-filters button{ border:1px solid #e4e7ec; background:#fff; padding:3px 8px; border-radius:6px; font-size:11px; cursor:pointer; }
+.status-filters button.on{ background:#2563eb; color:#fff; border-color:#2563eb; }
+#root{ padding:0 24px 24px; max-width:1200px; margin:0 auto; }
+.meta{ color:#64748b; font-size:12px; padding:8px 24px; background:#fcfdff; border-bottom:1px solid #e4e7ec; }
+.loading{ padding:60px; text-align:center; color:#64748b; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>⚡ HCQ FE · Live Dashboard</h1>
+  <a href="../index.html">← Архів снапшотів</a>
+  <div class="filters">
+    <label>Dev: <select id="f-dev"><option value="">усі</option></select></label>
+    <label>Goal: <select id="f-goal">
+      <option value="">усі</option>
+      <option value="0">G1</option><option value="1">G2</option>
+      <option value="2">G3</option><option value="3">G4</option>
+    </select></label>
+    <div class="status-filters" id="f-status"></div>
+  </div>
+</div>
+<div class="meta" id="meta">Завантаження…</div>
+<div id="root"><div class="loading">Fetching /data/latest.json …</div></div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
