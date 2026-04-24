@@ -16,11 +16,12 @@ export interface JiraIssue {
   };
 }
 
+// New Atlassian /search/jql endpoint uses cursor-based pagination.
+// `total` is no longer returned; rely on `nextPageToken` / `isLast`.
 export interface SearchResponse {
   issues: JiraIssue[];
-  total: number;
-  startAt: number;
-  maxResults: number;
+  nextPageToken?: string;
+  isLast?: boolean;
 }
 
 export class JiraClient {
@@ -49,7 +50,8 @@ export class JiraClient {
     return (await res.json()) as T;
   }
 
-  // Paginated JQL search. Fetches ALL issues (not just first page).
+  // Paginated JQL search via the new /rest/api/3/search/jql endpoint
+  // (the old /search was sunset in Apr 2025 — see CHANGE-2046). Cursor-based.
   async searchAll(
     jql: string,
     fields: readonly string[],
@@ -57,23 +59,23 @@ export class JiraClient {
   ): Promise<JiraIssue[]> {
     const pageSize = options.pageSize ?? 100;
     const all: JiraIssue[] = [];
-    let startAt = 0;
-    while (true) {
-      const body = {
+    let nextPageToken: string | undefined;
+    // Hard cap to avoid infinite loops if Jira misbehaves.
+    for (let i = 0; i < 200; i++) {
+      const body: Record<string, unknown> = {
         jql,
         fields,
-        startAt,
         maxResults: pageSize,
-        expand: options.expand,
       };
-      const page = await this.request<SearchResponse>('/rest/api/3/search', {
+      if (options.expand && options.expand.length) body.expand = options.expand.join(',');
+      if (nextPageToken) body.nextPageToken = nextPageToken;
+      const page = await this.request<SearchResponse>('/rest/api/3/search/jql', {
         method: 'POST',
         body: JSON.stringify(body),
       });
       all.push(...page.issues);
-      if (startAt + page.issues.length >= page.total) break;
-      if (page.issues.length === 0) break;
-      startAt += page.issues.length;
+      if (page.isLast || !page.nextPageToken || page.issues.length === 0) break;
+      nextPageToken = page.nextPageToken;
     }
     return all;
   }
