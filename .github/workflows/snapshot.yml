@@ -26,20 +26,17 @@ jobs:
     env:
       TZ: Europe/Kyiv
       JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
-      JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+      JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}
       CLOUD_ID: ${{ secrets.CLOUD_ID }}
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile=false
+          cache: npm
+      - run: npm ci
       - name: Generate snapshot
-        run: pnpm snapshot --variant ${{ github.event.inputs.variant || 'auto' }}
+        run: npm run snapshot -- --variant ${{ github.event.inputs.variant || 'auto' }}
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
