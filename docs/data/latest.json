@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-27T12:09:16.608Z",
+  "generatedAt": "2026-04-27T17:45:47.227Z",
   "variant": "daily",
   "sprint": {
     "id": 20579,
@@ -650,6 +650,145 @@
       "ruleHits": []
     },
     {
+      "key": "WEB-25624",
+      "summary": "[Content manager] [New Topic] Stretching Male with equipment",
+      "type": "Task",
+      "status": "In Progress",
+      "bucket": "progress",
+      "assignee": "Olha Shlapak",
+      "reporter": "Automation for Jira",
+      "storyPoints": 0,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T17:40:10.098+0300",
+      "created": "2026-04-27T13:19:10.451+0300",
+      "daysInStatus": 0,
+      "parentKey": null,
+      "subtaskKeys": [
+        "WEB-25640"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25384",
+      "summary": "[Content manager] Tori Repa flow",
+      "type": "Task",
+      "status": "In Progress",
+      "bucket": "progress",
+      "assignee": "Olha Shlapak",
+      "reporter": "Automation for Jira",
+      "storyPoints": 0,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T17:39:41.358+0300",
+      "created": "2026-04-10T17:26:09.095+0300",
+      "daysInStatus": 11,
+      "parentKey": null,
+      "subtaskKeys": [
+        "WEB-25639"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        19809,
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25415",
+      "summary": "Tori Repa Pilates Challenge - Checkout",
+      "type": "Task",
+      "status": "In Progress",
+      "bucket": "progress",
+      "assignee": "Anastasiia Motsukh",
+      "reporter": "Nadiia Horbenko",
+      "storyPoints": 5,
+      "qaEstimate": 8,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T16:54:18.458+0300",
+      "created": "2026-04-14T17:44:03.851+0300",
+      "daysInStatus": 9,
+      "parentKey": "WEB-25276",
+      "subtaskKeys": [
+        "WEB-25435"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25064",
+      "summary": "Localization & Analytics for bug-fixer",
+      "type": "Task",
+      "status": "In Progress",
+      "bucket": "progress",
+      "assignee": "maksym.rozhaiev",
+      "reporter": "maksym.rozhaiev",
+      "storyPoints": 5,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T15:36:31.654+0300",
+      "created": "2026-03-27T10:31:06.270+0200",
+      "daysInStatus": 21,
+      "parentKey": null,
+      "subtaskKeys": [
+        "WEB-25065"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        19809,
+        18959,
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @maksym.rozhaiev: 5 активних"
+        }
+      ]
+    },
+    {
       "key": "WEB-25528",
       "summary": "[Content manager] [New Topic] - Barre flow without equipment for Senior",
       "type": "Task",
@@ -700,105 +839,6 @@
       "parentKey": "WCN-3332",
       "subtaskKeys": [
         "WEB-25494"
-      ],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
-      "key": "WEB-25598",
-      "summary": "browsers incorrectly invert colours if the dark theme is selected on the device",
-      "type": "Bug",
-      "status": "In Progress",
-      "bucket": "progress",
-      "assignee": "maksym.rozhaiev",
-      "reporter": "Iryna Partaloga",
-      "storyPoints": 1,
-      "qaEstimate": 3,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "High",
-      "updated": "2026-04-27T11:55:22.520+0300",
-      "created": "2026-04-23T13:14:04.775+0300",
-      "daysInStatus": 2,
-      "parentKey": null,
-      "subtaskKeys": [
-        "WEB-25603"
-      ],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @maksym.rozhaiev: 5 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25413",
-      "summary": "Tori Repa Pilates Challenge - Onboarding",
-      "type": "Task",
-      "status": "In Progress",
-      "bucket": "progress",
-      "assignee": "Anastasiia Motsukh",
-      "reporter": "Nadiia Horbenko",
-      "storyPoints": 8,
-      "qaEstimate": 8,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-04-24T14:49:07.671+0300",
-      "created": "2026-04-14T17:19:59.036+0300",
-      "daysInStatus": 9,
-      "parentKey": "WEB-25276",
-      "subtaskKeys": [
-        "WEB-25433"
-      ],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
-      "key": "WEB-25414",
-      "summary": "Tori Repa Pilates Challenge - Fonts",
-      "type": "Task",
-      "status": "In Progress",
-      "bucket": "progress",
-      "assignee": "Anastasiia Motsukh",
-      "reporter": "Nadiia Horbenko",
-      "storyPoints": 2,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-04-24T12:50:34.393+0300",
-      "created": "2026-04-14T17:25:43.149+0300",
-      "daysInStatus": 9,
-      "parentKey": "WEB-25276",
-      "subtaskKeys": [
-        "WEB-25434"
       ],
       "blockedByKeys": [],
       "blocksKeys": [],
@@ -1004,25 +1044,25 @@
       "ruleHits": []
     },
     {
-      "key": "WEB-25572",
-      "summary": "[HCQ] Migrate Scratch Card page to schemas",
+      "key": "WEB-25414",
+      "summary": "Tori Repa Pilates Challenge - Fonts",
       "type": "Task",
       "status": "Ready for Testing",
       "bucket": "rft",
-      "assignee": "Vitalii Lazarenko",
-      "reporter": "Vitalii Lazarenko",
-      "storyPoints": 3,
+      "assignee": "Anastasiia Motsukh",
+      "reporter": "Nadiia Horbenko",
+      "storyPoints": 2,
       "qaEstimate": null,
       "aqaEstimate": null,
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-04-27T11:47:41.077+0300",
-      "created": "2026-04-22T16:34:26.993+0300",
+      "updated": "2026-04-27T16:01:44.693+0300",
+      "created": "2026-04-14T17:25:43.149+0300",
       "daysInStatus": 0,
-      "parentKey": "WCN-3332",
+      "parentKey": "WEB-25276",
       "subtaskKeys": [
-        "WEB-25573"
+        "WEB-25434"
       ],
       "blockedByKeys": [],
       "blocksKeys": [],
@@ -1032,7 +1072,50 @@
       ],
       "isRoleTask": false,
       "goalIndex": null,
-      "ruleHits": []
+      "ruleHits": [
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25413",
+      "summary": "Tori Repa Pilates Challenge - Onboarding",
+      "type": "Task",
+      "status": "Ready for Testing",
+      "bucket": "rft",
+      "assignee": "Anastasiia Motsukh",
+      "reporter": "Nadiia Horbenko",
+      "storyPoints": 8,
+      "qaEstimate": 8,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T16:01:43.296+0300",
+      "created": "2026-04-14T17:19:59.036+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25276",
+      "subtaskKeys": [
+        "WEB-25433"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+        }
+      ]
     },
     {
       "key": "WEB-24943",
@@ -1119,29 +1202,30 @@
       ]
     },
     {
-      "key": "WEB-25611",
-      "summary": "Changing the country breaks the checkout set preselection logic",
-      "type": "story bug",
+      "key": "WEB-25598",
+      "summary": "browsers incorrectly invert colours if the dark theme is selected on the device",
+      "type": "Bug",
       "status": "In Testing",
       "bucket": "testing",
       "assignee": "maksym.rozhaiev",
-      "reporter": "Oleksandr Mekhed",
-      "storyPoints": null,
-      "qaEstimate": null,
+      "reporter": "Iryna Partaloga",
+      "storyPoints": 1,
+      "qaEstimate": 3,
       "aqaEstimate": null,
       "releaseDate": null,
       "dueDate": null,
       "priority": "High",
-      "updated": "2026-04-27T14:45:02.355+0300",
-      "created": "2026-04-23T17:49:02.016+0300",
+      "updated": "2026-04-27T17:42:11.866+0300",
+      "created": "2026-04-23T13:14:04.775+0300",
       "daysInStatus": 0,
-      "parentKey": "WEB-24417",
-      "subtaskKeys": [],
+      "parentKey": null,
+      "subtaskKeys": [
+        "WEB-25603"
+      ],
       "blockedByKeys": [],
       "blocksKeys": [],
       "epicLinkKey": null,
       "sprintIds": [
-        19809,
         20579
       ],
       "isRoleTask": false,
@@ -1153,6 +1237,37 @@
           "message": "перевантаження @maksym.rozhaiev: 5 активних"
         }
       ]
+    },
+    {
+      "key": "WEB-25572",
+      "summary": "[HCQ] Migrate Scratch Card page to schemas",
+      "type": "Task",
+      "status": "In Testing",
+      "bucket": "testing",
+      "assignee": "Vitalii Lazarenko",
+      "reporter": "Vitalii Lazarenko",
+      "storyPoints": 3,
+      "qaEstimate": 3,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T17:19:30.974+0300",
+      "created": "2026-04-22T16:34:26.993+0300",
+      "daysInStatus": 0,
+      "parentKey": "WCN-3332",
+      "subtaskKeys": [
+        "WEB-25573"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     },
     {
       "key": "WEB-24417",
@@ -1195,12 +1310,6 @@
       "isRoleTask": false,
       "goalIndex": null,
       "ruleHits": [
-        {
-          "rule": 5,
-          "severity": "danger",
-          "message": "story bug WEB-25611 відкритий — повернути parent в In Progress",
-          "slackMessage": "⛔ До <WEB-24417> блокер: story bug <WEB-25611> → повернути в In Progress"
-        },
         {
           "rule": 2,
           "severity": "warn",
@@ -1649,6 +1758,36 @@
         17994,
         19809,
         18959,
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25611",
+      "summary": "Changing the country breaks the checkout set preselection logic",
+      "type": "story bug",
+      "status": "Accepted",
+      "bucket": "done",
+      "assignee": "maksym.rozhaiev",
+      "reporter": "Oleksandr Mekhed",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "High",
+      "updated": "2026-04-27T17:21:45.144+0300",
+      "created": "2026-04-23T17:49:02.016+0300",
+      "daysInStatus": 2,
+      "parentKey": "WEB-24417",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        19809,
         20579
       ],
       "isRoleTask": false,
@@ -3977,35 +4116,6 @@
       "ruleHits": []
     },
     {
-      "key": "WEB-25624",
-      "summary": "[Content manager] [New Topic] Stretching Male with equipment",
-      "type": "Task",
-      "status": "Dev Backlog",
-      "bucket": "todo",
-      "assignee": "Olha Shlapak",
-      "reporter": "Automation for Jira",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-04-27T13:50:56.650+0300",
-      "created": "2026-04-27T13:19:10.451+0300",
-      "daysInStatus": 0,
-      "parentKey": null,
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
       "key": "WEB-25625",
       "summary": "[Content manager] [New Topic] - Home Pilates without equipment",
       "type": "Task",
@@ -4105,36 +4215,6 @@
       ]
     },
     {
-      "key": "WEB-25384",
-      "summary": "[Content manager] Tori Repa flow",
-      "type": "Task",
-      "status": "Dev Backlog",
-      "bucket": "todo",
-      "assignee": "Olha Shlapak",
-      "reporter": "Automation for Jira",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-04-20T13:23:47.553+0300",
-      "created": "2026-04-10T17:26:09.095+0300",
-      "daysInStatus": 11,
-      "parentKey": null,
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        19809,
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
       "key": "WEB-25508",
       "summary": "Run Analytics Tool",
       "type": "Sub-task",
@@ -4186,37 +4266,6 @@
         "WEB-25418",
         "WEB-25436",
         "WEB-25508"
-      ],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
-      "key": "WEB-25415",
-      "summary": "Tori Repa Pilates Challenge - Checkout",
-      "type": "Task",
-      "status": "Dev Backlog",
-      "bucket": "todo",
-      "assignee": null,
-      "reporter": "Nadiia Horbenko",
-      "storyPoints": 5,
-      "qaEstimate": 8,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-04-20T11:53:21.275+0300",
-      "created": "2026-04-14T17:44:03.851+0300",
-      "daysInStatus": 9,
-      "parentKey": "WEB-25276",
-      "subtaskKeys": [
-        "WEB-25435"
       ],
       "blockedByKeys": [],
       "blocksKeys": [],
@@ -4572,45 +4621,6 @@
       ]
     },
     {
-      "key": "WEB-25064",
-      "summary": "Localization & Analytics for bug-fixer",
-      "type": "Task",
-      "status": "On hold",
-      "bucket": "onhold",
-      "assignee": "maksym.rozhaiev",
-      "reporter": "maksym.rozhaiev",
-      "storyPoints": 5,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-04-15T17:42:10.738+0300",
-      "created": "2026-03-27T10:31:06.270+0200",
-      "daysInStatus": 15,
-      "parentKey": null,
-      "subtaskKeys": [
-        "WEB-25065"
-      ],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        19809,
-        18959,
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 8,
-          "severity": "warn",
-          "message": "On hold 15 дн. без апдейту"
-        }
-      ]
-    },
-    {
       "key": "WEB-24679",
       "summary": "Validate external links in shortcode-rendered texts",
       "type": "Task",
@@ -4687,6 +4697,94 @@
           "message": "On hold 27 дн. без апдейту"
         }
       ]
+    },
+    {
+      "key": "WEB-25640",
+      "summary": "[Security Champion] [Content manager] [New Topic] Stretching Male with equipment",
+      "type": "Security Sub Task",
+      "status": "Open",
+      "bucket": "todo",
+      "assignee": "Mykyta Chaika",
+      "reporter": "Automation for Jira",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T17:40:09.508+0300",
+      "created": "2026-04-27T17:40:07.597+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25624",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25639",
+      "summary": "[Security Champion] [Content manager] Tori Repa flow",
+      "type": "Security Sub Task",
+      "status": "Open",
+      "bucket": "todo",
+      "assignee": "Mykyta Chaika",
+      "reporter": "Automation for Jira",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T17:39:41.104+0300",
+      "created": "2026-04-27T17:39:38.484+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25384",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        19809,
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25435",
+      "summary": "[Security Champion] Tori Repa Pilates Challenge - Checkout",
+      "type": "Security Sub Task",
+      "status": "Open",
+      "bucket": "todo",
+      "assignee": "Mykyta Chaika",
+      "reporter": "Automation for Jira",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-04-27T16:54:18.434+0300",
+      "created": "2026-04-15T12:07:18.235+0300",
+      "daysInStatus": 8,
+      "parentKey": "WEB-25415",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        20579
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     },
     {
       "key": "WEB-25626",
@@ -5087,35 +5185,6 @@
       "created": "2026-04-15T12:07:37.185+0300",
       "daysInStatus": 8,
       "parentKey": "WEB-25416",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        20579
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
-      "key": "WEB-25435",
-      "summary": "[Security Champion] Tori Repa Pilates Challenge - Checkout",
-      "type": "Security Sub Task",
-      "status": "Open",
-      "bucket": "todo",
-      "assignee": null,
-      "reporter": "Automation for Jira",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-04-16T12:01:32.899+0300",
-      "created": "2026-04-15T12:07:18.235+0300",
-      "daysInStatus": 8,
-      "parentKey": "WEB-25415",
       "subtaskKeys": [],
       "blockedByKeys": [],
       "blocksKeys": [],
@@ -6071,17 +6140,17 @@
           "key": "WEB-25572",
           "summary": "[HCQ] Migrate Scratch Card page to schemas",
           "type": "Task",
-          "status": "Ready for Testing",
-          "bucket": "rft",
+          "status": "In Testing",
+          "bucket": "testing",
           "assignee": "Vitalii Lazarenko",
           "reporter": "Vitalii Lazarenko",
           "storyPoints": 3,
-          "qaEstimate": null,
+          "qaEstimate": 3,
           "aqaEstimate": null,
           "releaseDate": null,
           "dueDate": null,
           "priority": "Medium",
-          "updated": "2026-04-27T11:47:41.077+0300",
+          "updated": "2026-04-27T17:19:30.974+0300",
           "created": "2026-04-22T16:34:26.993+0300",
           "daysInStatus": 0,
           "parentKey": "WCN-3332",
@@ -6100,23 +6169,22 @@
         }
       ],
       "roleTasks": [],
-      "inTesting": [],
-      "rftQueue": [
+      "inTesting": [
         {
           "key": "WEB-25572",
           "summary": "[HCQ] Migrate Scratch Card page to schemas",
           "type": "Task",
-          "status": "Ready for Testing",
-          "bucket": "rft",
+          "status": "In Testing",
+          "bucket": "testing",
           "assignee": "Vitalii Lazarenko",
           "reporter": "Vitalii Lazarenko",
           "storyPoints": 3,
-          "qaEstimate": null,
+          "qaEstimate": 3,
           "aqaEstimate": null,
           "releaseDate": null,
           "dueDate": null,
           "priority": "Medium",
-          "updated": "2026-04-27T11:47:41.077+0300",
+          "updated": "2026-04-27T17:19:30.974+0300",
           "created": "2026-04-22T16:34:26.993+0300",
           "daysInStatus": 0,
           "parentKey": "WCN-3332",
@@ -6134,31 +6202,32 @@
           "ruleHits": []
         }
       ],
+      "rftQueue": [],
       "overloaded": false
     },
     {
       "name": "Anastasiia Motsukh",
       "active": [
         {
-          "key": "WEB-25413",
-          "summary": "Tori Repa Pilates Challenge - Onboarding",
+          "key": "WEB-25415",
+          "summary": "Tori Repa Pilates Challenge - Checkout",
           "type": "Task",
           "status": "In Progress",
           "bucket": "progress",
           "assignee": "Anastasiia Motsukh",
           "reporter": "Nadiia Horbenko",
-          "storyPoints": 8,
+          "storyPoints": 5,
           "qaEstimate": 8,
           "aqaEstimate": null,
           "releaseDate": null,
           "dueDate": null,
           "priority": "Medium",
-          "updated": "2026-04-24T14:49:07.671+0300",
-          "created": "2026-04-14T17:19:59.036+0300",
+          "updated": "2026-04-27T16:54:18.458+0300",
+          "created": "2026-04-14T17:44:03.851+0300",
           "daysInStatus": 9,
           "parentKey": "WEB-25276",
           "subtaskKeys": [
-            "WEB-25433"
+            "WEB-25435"
           ],
           "blockedByKeys": [],
           "blocksKeys": [],
@@ -6168,14 +6237,20 @@
           ],
           "isRoleTask": false,
           "goalIndex": null,
-          "ruleHits": []
+          "ruleHits": [
+            {
+              "rule": 2,
+              "severity": "warn",
+              "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+            }
+          ]
         },
         {
           "key": "WEB-25414",
           "summary": "Tori Repa Pilates Challenge - Fonts",
           "type": "Task",
-          "status": "In Progress",
-          "bucket": "progress",
+          "status": "Ready for Testing",
+          "bucket": "rft",
           "assignee": "Anastasiia Motsukh",
           "reporter": "Nadiia Horbenko",
           "storyPoints": 2,
@@ -6184,9 +6259,9 @@
           "releaseDate": null,
           "dueDate": null,
           "priority": "Medium",
-          "updated": "2026-04-24T12:50:34.393+0300",
+          "updated": "2026-04-27T16:01:44.693+0300",
           "created": "2026-04-14T17:25:43.149+0300",
-          "daysInStatus": 9,
+          "daysInStatus": 0,
           "parentKey": "WEB-25276",
           "subtaskKeys": [
             "WEB-25434"
@@ -6199,13 +6274,131 @@
           ],
           "isRoleTask": false,
           "goalIndex": null,
-          "ruleHits": []
+          "ruleHits": [
+            {
+              "rule": 2,
+              "severity": "warn",
+              "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+            }
+          ]
+        },
+        {
+          "key": "WEB-25413",
+          "summary": "Tori Repa Pilates Challenge - Onboarding",
+          "type": "Task",
+          "status": "Ready for Testing",
+          "bucket": "rft",
+          "assignee": "Anastasiia Motsukh",
+          "reporter": "Nadiia Horbenko",
+          "storyPoints": 8,
+          "qaEstimate": 8,
+          "aqaEstimate": null,
+          "releaseDate": null,
+          "dueDate": null,
+          "priority": "Medium",
+          "updated": "2026-04-27T16:01:43.296+0300",
+          "created": "2026-04-14T17:19:59.036+0300",
+          "daysInStatus": 0,
+          "parentKey": "WEB-25276",
+          "subtaskKeys": [
+            "WEB-25433"
+          ],
+          "blockedByKeys": [],
+          "blocksKeys": [],
+          "epicLinkKey": null,
+          "sprintIds": [
+            20579
+          ],
+          "isRoleTask": false,
+          "goalIndex": null,
+          "ruleHits": [
+            {
+              "rule": 2,
+              "severity": "warn",
+              "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+            }
+          ]
         }
       ],
       "roleTasks": [],
       "inTesting": [],
-      "rftQueue": [],
-      "overloaded": false
+      "rftQueue": [
+        {
+          "key": "WEB-25414",
+          "summary": "Tori Repa Pilates Challenge - Fonts",
+          "type": "Task",
+          "status": "Ready for Testing",
+          "bucket": "rft",
+          "assignee": "Anastasiia Motsukh",
+          "reporter": "Nadiia Horbenko",
+          "storyPoints": 2,
+          "qaEstimate": null,
+          "aqaEstimate": null,
+          "releaseDate": null,
+          "dueDate": null,
+          "priority": "Medium",
+          "updated": "2026-04-27T16:01:44.693+0300",
+          "created": "2026-04-14T17:25:43.149+0300",
+          "daysInStatus": 0,
+          "parentKey": "WEB-25276",
+          "subtaskKeys": [
+            "WEB-25434"
+          ],
+          "blockedByKeys": [],
+          "blocksKeys": [],
+          "epicLinkKey": null,
+          "sprintIds": [
+            20579
+          ],
+          "isRoleTask": false,
+          "goalIndex": null,
+          "ruleHits": [
+            {
+              "rule": 2,
+              "severity": "warn",
+              "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+            }
+          ]
+        },
+        {
+          "key": "WEB-25413",
+          "summary": "Tori Repa Pilates Challenge - Onboarding",
+          "type": "Task",
+          "status": "Ready for Testing",
+          "bucket": "rft",
+          "assignee": "Anastasiia Motsukh",
+          "reporter": "Nadiia Horbenko",
+          "storyPoints": 8,
+          "qaEstimate": 8,
+          "aqaEstimate": null,
+          "releaseDate": null,
+          "dueDate": null,
+          "priority": "Medium",
+          "updated": "2026-04-27T16:01:43.296+0300",
+          "created": "2026-04-14T17:19:59.036+0300",
+          "daysInStatus": 0,
+          "parentKey": "WEB-25276",
+          "subtaskKeys": [
+            "WEB-25433"
+          ],
+          "blockedByKeys": [],
+          "blocksKeys": [],
+          "epicLinkKey": null,
+          "sprintIds": [
+            20579
+          ],
+          "isRoleTask": false,
+          "goalIndex": null,
+          "ruleHits": [
+            {
+              "rule": 2,
+              "severity": "warn",
+              "message": "перевантаження @Anastasiia Motsukh: 3 активних"
+            }
+          ]
+        }
+      ],
+      "overloaded": true
     },
     {
       "name": "Maksym Rozhaiev",
@@ -6330,15 +6523,6 @@
       "note": "On hold 9 дн."
     },
     {
-      "key": "WEB-25064",
-      "summary": "Localization & Analytics for bug-fixer",
-      "status": "On hold",
-      "assignee": "maksym.rozhaiev",
-      "reason": "on_hold",
-      "blockerKey": null,
-      "note": "On hold 15 дн."
-    },
-    {
       "key": "WEB-24679",
       "summary": "Validate external links in shortcode-rendered texts",
       "status": "On hold",
@@ -6365,17 +6549,6 @@
       "subtaskStatus": "Open",
       "parentKey": "WEB-23979",
       "parentStatus": "Returned from Testing",
-      "parentBucket": "testing",
-      "parentGoalIndex": null,
-      "priority": "close-first"
-    },
-    {
-      "subtaskKey": "WEB-25611",
-      "subtaskSummary": "Changing the country breaks the checkout set preselection logic",
-      "subtaskType": "story bug",
-      "subtaskStatus": "In Testing",
-      "parentKey": "WEB-24417",
-      "parentStatus": "In Testing",
       "parentBucket": "testing",
       "parentGoalIndex": null,
       "priority": "close-first"
@@ -6414,13 +6587,46 @@
       "priority": "close-first"
     },
     {
+      "subtaskKey": "WEB-25433",
+      "subtaskSummary": "[Security Champion] Tori Repa Pilates Challenge - Onboarding",
+      "subtaskType": "Security Sub Task",
+      "subtaskStatus": "Open",
+      "parentKey": "WEB-25413",
+      "parentStatus": "Ready for Testing",
+      "parentBucket": "rft",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
+      "subtaskKey": "WEB-25434",
+      "subtaskSummary": "[Security Champion] Tori Repa Pilates Challenge - Fonts",
+      "subtaskType": "Security Sub Task",
+      "subtaskStatus": "Open",
+      "parentKey": "WEB-25414",
+      "parentStatus": "Ready for Testing",
+      "parentBucket": "rft",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
       "subtaskKey": "WEB-25573",
       "subtaskSummary": "[Security Champion] [HCQ] Migrate Scratch Card page to schemas",
       "subtaskType": "Security Sub Task",
       "subtaskStatus": "Open",
       "parentKey": "WEB-25572",
-      "parentStatus": "Ready for Testing",
-      "parentBucket": "rft",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
+      "subtaskKey": "WEB-25603",
+      "subtaskSummary": "[Security Champion] browsers incorrectly invert colours if the dark theme is selected on the device",
+      "subtaskType": "Security Sub Task",
+      "subtaskStatus": "Open",
+      "parentKey": "WEB-25598",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
       "parentGoalIndex": null,
       "priority": "close-first"
     },
@@ -6841,28 +7047,28 @@
   ],
   "velocity": {
     "devDone": 62,
-    "devActive": 57,
-    "devOnHold": 17,
-    "devTotal": 136,
+    "devActive": 67,
+    "devOnHold": 12,
+    "devTotal": 141,
     "qaDone": 81,
-    "qaActive": 25,
-    "qaTotal": 177,
-    "qaDonePct": 46,
-    "qaInRft": 1,
+    "qaActive": 31,
+    "qaTotal": 180,
+    "qaDonePct": 45,
+    "qaInRft": 9,
     "qaOnHold": 13,
     "forecast": "Темп нижче очікуваного, G1 ✅, G2 ✅, G3 risk, G4 in-progress."
   },
   "questions": [
     "@Hanna Yeshchenko — WEB-23377: due date прострочено на 115 дн.",
-    "@maksym.rozhaiev — WEB-24417: story bug WEB-25611 відкритий — повернути parent в In Progress",
     "@health-coaching_team — WEB-24819: зв'язки blocked by: WEB-23436 (cross-project)",
-    "@maksym.rozhaiev — WEB-25598: перевантаження @maksym.rozhaiev: 5 активних",
+    "@Anastasiia Motsukh — WEB-25415: перевантаження @Anastasiia Motsukh: 3 активних",
+    "@maksym.rozhaiev — WEB-25064: перевантаження @maksym.rozhaiev: 5 активних",
     "@Mykyta Chaika — WEB-24465: зв'язки blocked by: WEBBE-1935 (cross-project)"
   ],
   "smActions": [
     "Escalation: verdict off-track — обговорити з PO scope-cut або перенесення цілей.",
     "Release pressure: 3 таск(и) з RD ≤ 2 дн — синк з PO про пріоритет.",
     "Пінгнути репортерів: Iryna Partaloga, Anna Shyrokova, Mykhailo Mykhailenko — забрати баги через bug-bot.",
-    "QA pickup: WEB-25572, WEB-24943, WEB-25028 — черга на тест."
+    "QA pickup: WEB-25414, WEB-25413, WEB-24943 — черга на тест."
   ]
 }
