@@ -15,7 +15,6 @@ import { fetchSprintGoalValues, resolveGoal, tagTicketsWithGoalIndex } from './g
 import { bucketOf, isActiveProgress } from './workflow.ts';
 import {
   buildQuestions,
-  buildSmActions,
   velocityForecast,
   verdictFromGoals,
   verdictSummaryLine,
@@ -37,10 +36,37 @@ export async function buildReport(
   cfg: TeamConfig,
   variant: ReportVariant,
 ): Promise<ReportData> {
-  // 1. Fetch sprint + all sprint tickets (with changelog for age calcs)
+  // 1. Fetch sprint + all sprint tickets.
+  // The new /rest/api/3/search/jql endpoint does NOT reliably return changelog
+  // even with expand=changelog. So we re-fetch per-issue changelogs for tickets
+  // we actually need accurate "days in status" for (active progress + onhold/blocked).
   const sprintInfo = await client.getSprint(cfg.sprintId);
   const allIssues = await client.searchAll(qAllSprint(cfg), [...REQUIRED_FIELDS], { expand: ['changelog'] });
   const now = new Date();
+
+  // Hydrate changelog for tickets where stale-days actually matters.
+  await Promise.all(
+    allIssues.map(async (issue) => {
+      if (issue.changelog && issue.changelog.histories?.length) return; // already have it
+      const status = (issue.fields?.status?.name as string) ?? '';
+      const needsChangelog =
+        bucketOf(status as any) === 'progress' ||
+        bucketOf(status as any) === 'review' ||
+        bucketOf(status as any) === 'rft' ||
+        bucketOf(status as any) === 'testing' ||
+        bucketOf(status as any) === 'rfd' ||
+        bucketOf(status as any) === 'onhold' ||
+        bucketOf(status as any) === 'blocked';
+      if (!needsChangelog) return;
+      try {
+        const full = await client.getIssue(issue.key, { expand: ['changelog'] });
+        issue.changelog = full.changelog;
+      } catch {
+        /* swallow — fallback to created date */
+      }
+    }),
+  );
+
   const tickets = allIssues.map((i) => enrichIssue(i, now.toISOString()));
 
   // 2. Goal resolution
@@ -58,8 +84,30 @@ export async function buildReport(
   // 5. Velocity
   const velocity = computeVelocity(tickets);
 
-  // 6. Blockers / subtasks / bugs
-  const blockers = buildBlockers(tickets);
+  // 6. Blockers / subtasks / bugs.
+  // Pre-fetch statuses for "is blocked by" links pointing OUTSIDE our sprint
+  // (typically WEBBE-* cross-team deps). Without this, cross-team blockers
+  // would either be silently skipped (old behaviour) or shown without status.
+  const localKeys = new Set(tickets.map((t) => t.key));
+  const externalBlockerKeys = new Set<string>();
+  for (const t of tickets) {
+    for (const k of t.blockedByKeys) {
+      if (!localKeys.has(k)) externalBlockerKeys.add(k);
+    }
+  }
+  const externalStatuses = new Map<string, { status: string; bucket: string }>();
+  await Promise.all(
+    [...externalBlockerKeys].map(async (key) => {
+      try {
+        const issue = await client.getIssue(key, { fields: ['status'] });
+        const status = (issue.fields?.status?.name as string) ?? '';
+        externalStatuses.set(key, { status, bucket: bucketOf(status as any) });
+      } catch {
+        /* unknown — buildBlockers will still include the blocker */
+      }
+    }),
+  );
+  const blockers = buildBlockers(tickets, externalStatuses);
   const subtasks = buildSubtaskRows(tickets);
   const bugsNoProgress = buildBugGroups(tickets);
 
@@ -110,7 +158,8 @@ export async function buildReport(
   };
 
   const questions = buildQuestions(partial);
-  const smActions = buildSmActions(partial);
+  // SM Actions section removed from report — keep field for schema stability.
+  const smActions: string[] = [];
 
   return { ...partial, questions, smActions };
 }

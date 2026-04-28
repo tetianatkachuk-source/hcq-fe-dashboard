@@ -21,11 +21,15 @@ export interface TicketLineOpts {
 }
 
 export function ticketLine(t: Ticket, opts: TicketLineOpts): string {
+  // Skip design-web inline alerts — parent of design subtask is itself a design task.
+  const isDesignParent = t.type === 'Design web' || t.type === 'UI/UX task';
   // Inline badges: bug-alert (open story bugs in subtasks), sec-alert (security),
   // rft-alert (RFT/RFD marker), wait-badge (stale days), updated-badge (last-updated date).
-  const subs = t.subtaskKeys
-    .map((k) => opts.byKey.get(k))
-    .filter((s): s is Ticket => !!s);
+  const subs = isDesignParent
+    ? []
+    : t.subtaskKeys
+        .map((k) => opts.byKey.get(k))
+        .filter((s): s is Ticket => !!s);
   const openStoryBugs = subs.filter((s) => s.type === 'story bug' && bucketOf(s.status) !== 'done');
   const openSecurity = subs.filter((s) => s.type === 'Security Sub Task' && bucketOf(s.status) !== 'done');
 
@@ -58,12 +62,12 @@ export function ticketLine(t: Ticket, opts: TicketLineOpts): string {
     t.releaseDate ? ' ' + rdChip(t.releaseDate) : '',
     ' — ',
     escapeHtml(t.summary),
-    opts.showAssignee && t.assignee ? ` <span class="hint">@${escapeHtml(t.assignee)}</span>` : '',
+    opts.showAssignee && t.assignee ? ` <span class="hint">${escapeHtml(t.assignee)}</span>` : '',
     bugAlert,
     secAlert,
     rftAlert,
     waitBadge,
-    staleBadge(t.daysInStatus),
+    staleBadge(t.daysInStatus, 3, t.status),
     ' ',
     updatedBadge,
     '</div>',

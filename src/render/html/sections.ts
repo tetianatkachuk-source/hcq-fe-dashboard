@@ -172,7 +172,7 @@ export function renderBlockers(data: ReportData, baseUrl: string): string {
   const rows = data.blockers.map((b) => `<div class="t">
     <a href="${baseUrl}/browse/${b.key}" target="_blank">${b.key}</a>
     ${statusChip(b.status)} — ${escapeHtml(b.note)}
-    ${b.assignee ? ` <span class="hint">@${escapeHtml(b.assignee)}</span>` : ''}
+    ${b.assignee ? ` <span class="hint">${escapeHtml(b.assignee)}</span>` : ''}
   </div>`).join('');
   return `<div class="card risk">
   <h2>⚠️ Блокери та ризики</h2>
@@ -221,7 +221,7 @@ export function renderVelocity(data: ReportData): string {
     ${kpi('QA Active', `${v.qaActive}`, 'In Testing + QA IP', 'yellow')}
     ${kpi('QA Total', `${v.qaTotal}`, qaTotalSub)}
   </div>
-  <p class="hint">${escapeHtml(v.forecast)}</p>
+  ${v.forecast ? `<p class="hint">${escapeHtml(v.forecast)}</p>` : ''}
 </div>`;
 }
 
@@ -235,12 +235,3 @@ export function renderQuestions(data: ReportData): string {
 </div>`;
 }
 
-export function renderSmActions(data: ReportData): string {
-  if (data.smActions.length === 0) return '';
-  const items = data.smActions.map((a) => `<li>${escapeHtml(a)}</li>`).join('');
-  return `<div class="card">
-  <h2>🎬 SM Actions</h2>
-  ${hint('Дії Scrum Master після стендапу.')}
-  <ol>${items}</ol>
-</div>`;
-}

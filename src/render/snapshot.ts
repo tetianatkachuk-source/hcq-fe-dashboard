@@ -13,7 +13,6 @@ import {
   renderQuestions,
   renderReleasePressure,
   renderRfd,
-  renderSmActions,
   renderSubtasks,
   renderVelocity,
 } from './html/sections.ts';
@@ -48,7 +47,6 @@ ${renderBlockers(data, baseUrl)}
 ${renderBugs(data, baseUrl)}
 ${renderVelocity(data)}
 ${renderQuestions(data)}
-${renderSmActions(data)}
 <p class="hint">Generated ${escapeHtml(data.generatedAt)} · <a href="../index.html">← всі звіти</a> · <a href="../live/">live dashboard</a></p>
 </body>
 </html>`;

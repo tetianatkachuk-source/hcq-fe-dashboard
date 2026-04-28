@@ -33,8 +33,15 @@ export function qaBadge(qa: number | null): string {
   return `<span class="sp">${qa} QA</span>`;
 }
 
-export function staleBadge(days: number, threshold = 3): string {
+// Stale-days badge. Only shows for active-progress statuses — for To Do / Backlog
+// the time is meaningless (ticket may sit in backlog for the whole sprint).
+export function staleBadge(days: number, threshold = 3, status?: JiraStatus): string {
   if (days < threshold) return '';
+  if (status) {
+    const b = bucketOf(status);
+    // Hide for backlog / done / on-hold flavours — only render on active progress.
+    if (b === 'todo' || b === 'done' || b === 'onhold' || b === 'blocked') return '';
+  }
   const hot = days >= 7 ? ' hot' : '';
   return `<span class="stale${hot}">⏳ ${days} дн.</span>`;
 }

@@ -37,18 +37,16 @@ export function verdictSummaryLine(goals: Goal[]): string {
     .join(', ');
 }
 
-export function velocityForecast(goals: Goal[], velocity: VelocityMetrics, sprintDayN: number, totalDays: number): string {
-  const expected = Math.round((sprintDayN / Math.max(totalDays, 1)) * (velocity.devTotal || 0));
-  const tempo = velocity.devDone >= expected ? 'Темп ок' : 'Темп нижче очікуваного';
-  const goalTags = goals.map((g) => {
-    const n = `G${g.index + 1}`;
-    if (g.kind === 'missing') return `${n} ?`;
-    if (g.bucket === 'done') return `${n} ✅`;
-    if (g.blockerKeys.length > 0) return `${n} risk`;
-    if (g.donePct >= 75) return `${n} realistic`;
-    return `${n} in-progress`;
-  });
-  return `${tempo}, ${goalTags.join(', ')}.`;
+// Forecast: only return the team's potential closure capacity if we can compute it
+// from current velocity. If the data is too thin (no Done SP yet, or sprint barely
+// started), return '' so the rendered comment is omitted entirely.
+export function velocityForecast(_goals: Goal[], velocity: VelocityMetrics, sprintDayN: number, totalDays: number): string {
+  if (!velocity.devTotal || sprintDayN < 2) return '';
+  const daysElapsed = Math.max(1, sprintDayN);
+  const dailyRate = velocity.devDone / daysElapsed;
+  const projected = Math.round(dailyRate * totalDays);
+  if (projected <= 0) return '';
+  return `Прогноз закриття за поточним темпом: ~${projected} SP / ${velocity.devTotal} SP у спринті.`;
 }
 
 export function buildQuestions(data: Omit<ReportData, 'questions' | 'smActions'>): string[] {
@@ -59,31 +57,12 @@ export function buildQuestions(data: Omit<ReportData, 'questions' | 'smActions'>
 
   for (const { t, r } of [...danger, ...warn]) {
     if (out.length >= 5) break;
-    const mention = t.assignee ? `@${t.assignee}` : '@health-coaching_team';
+    // Fix #8: no @-tags — just plain names or a neutral team label.
+    const mention = t.assignee ? t.assignee : 'Команда';
     const line = `${mention} — ${t.key}: ${r.message}`;
     if (!out.includes(line)) out.push(line);
   }
   return out;
 }
 
-export function buildSmActions(data: Omit<ReportData, 'questions' | 'smActions'>): string[] {
-  const out: string[] = [];
-  if (data.verdict === 'off-track') {
-    out.push('Escalation: verdict off-track — обговорити з PO scope-cut або перенесення цілей.');
-  }
-  if (data.releasePressure.length > 0) {
-    out.push(`Release pressure: ${data.releasePressure.length} таск(и) з RD ≤ 2 дн — синк з PO про пріоритет.`);
-  }
-  if (data.bugsNoProgress.length > 0) {
-    out.push(`Пінгнути репортерів: ${data.bugsNoProgress.map((g) => g.reporter).slice(0, 3).join(', ')} — забрати баги через bug-bot.`);
-  }
-  const urStale = data.tickets.filter((t) => t.ruleHits.some((r) => r.rule === 1));
-  if (urStale.length > 0) {
-    out.push(`Пінгнути reviewers: ${urStale.slice(0, 3).map((t) => t.key).join(', ')} — UR > 4 дн.`);
-  }
-  const rftQ = data.tickets.filter((t) => t.bucket === 'rft');
-  if (rftQ.length > 0) {
-    out.push(`QA pickup: ${rftQ.slice(0, 3).map((t) => t.key).join(', ')} — черга на тест.`);
-  }
-  return out.slice(0, 5);
-}
+// buildSmActions removed — section 🎬 SM Actions no longer rendered.
