@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Sprint Pulse | HCQ FE | 2026-04-28</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{
+  --ink:#0f172a; --muted:#64748b; --border:#e4e7ec;
+  --link:#2563eb; --risk:#dc2626; --accent:#64748b;
+  --bg:#f5f6f8; --card-bg:#ffffff;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; padding:24px; font:14px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); }
+h1{ font-size:22px; margin:0 0 6px; border-bottom:2px solid var(--border); padding-bottom:8px; }
+h1 .sub{ font-size:13px; color:var(--muted); font-weight:400; margin-left:8px; }
+h2{ font-size:15px; margin:0 0 2px; }
+h3{ font-size:13.5px; margin:14px 0 4px; }
+a{ color:var(--link); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+.section-hint{ color:var(--muted); font-style:italic; font-size:12.5px; margin:2px 0 10px; }
+.card{ background:var(--card-bg); border:1px solid var(--border); border-left:4px solid var(--accent);
+       padding:14px 18px; margin:12px 0; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,0.03); }
+.card.risk{ border-left-color:var(--risk); }
+.card.rp{ border-left-color:var(--risk); background:#fff7f7; }
+.banner{ background:#f8fafc; border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:8px 0 16px; }
+.banner .verdict{ display:inline-block; font-weight:600; padding:3px 10px; border-radius:6px; background:#fef3c7; color:#92400e; margin-right:10px; }
+.banner .verdict.ok{ background:#dcfce7; color:#166534; }
+.banner .verdict.bad{ background:#fee2e2; color:#991b1b; }
+.banner .pulse-summary{ display:inline; font-size:13.5px; color:var(--ink); margin:0; }
+
+/* Chips */
+.chip{ display:inline-block; font-weight:500; font-size:11px; letter-spacing:0; text-transform:none;
+       padding:2px 7px; border-radius:6px; margin:1px 2px 1px 0; }
+.chip.todo{ background:#f1f5f9; color:#475569; }
+.chip.progress{ background:#fff4e5; color:#9a6a2e; }
+.chip.review{ background:#fef7e0; color:#8a6d1e; }
+.chip.testing{ background:#e0ecfd; color:#3a5aa8; }
+.chip.rfd{ background:#d7f1f4; color:#205f70; }
+.chip.done{ background:#ddf4e2; color:#2e6b3b; }
+.chip.onhold{ background:#e4e7ec; color:#3a4553; }
+.chip.blocked,.chip.open{ background:#fbdada; color:#8a3030; font-weight:600; }
+.chip.prio-high{ background:#fbdada; color:#8a3030; }
+.chip.rd{ background:#e0ecfd; color:#3a5aa8; }
+.chip.rd-warn{ background:#fdf0d9; color:#8a5a1c; }
+.chip.rd-crit{ background:#fbdada; color:#8a3030; font-weight:600; }
+
+/* Goal badges */
+.g{ display:inline-block; padding:2px 7px; border-radius:4px; font-weight:700; font-size:11px; color:#fff; margin-right:6px; }
+.g.g1{ background:#c2410c; }
+.g.g2{ background:#2563eb; }
+.g.g3{ background:#7c3aed; }
+.g.g4{ background:#059669; }
+
+.sp{ color:var(--muted); font-weight:600; font-size:12px; margin-left:6px; }
+.role{ background:#eef2ff; color:#3730a3; font-size:11px; padding:2px 7px; border-radius:6px; margin:0 3px; }
+.stale{ background:#fed7aa; color:#7c2d12; font-size:11px; padding:2px 7px; border-radius:6px; margin-left:6px; }
+.stale.hot{ background:#fecaca; color:#7f1d1d; }
+.delta-inline{ display:inline-block; font-size:12px; padding:1px 5px; border-radius:4px; background:#fff; border:1px solid var(--border); margin-left:6px; color:var(--muted); }
+
+/* Task rows */
+.t{ font-size:13.5px; margin:4px 0; line-height:1.6; }
+.note{ color:var(--muted); font-size:12.5px; margin:6px 0 0 20px; }
+.note.warn{ color:#9a6a2e; }
+.note.danger{ color:var(--risk); }
+.hint{ color:var(--muted); font-size:12.5px; }
+
+/* KPI tiles */
+.kpi-strip{ display:grid; grid-template-columns:repeat(auto-fit, minmax(135px, 1fr)); gap:10px; margin:10px 0 6px; }
+.kpi{ background:#fff; border:1px solid var(--border); border-radius:7px; padding:8px 10px; }
+.kpi .lbl{ font-size:10.5px; text-transform:uppercase; letter-spacing:0.02em; color:var(--muted); }
+.kpi .val{ font-size:19px; font-weight:700; line-height:1.1; margin-top:3px; }
+.kpi .sub{ font-size:10.5px; color:var(--muted); margin-top:3px; }
+.kpi.green .val{ color:#15803d; }
+.kpi.yellow .val{ color:#a16207; }
+.kpi.red .val{ color:var(--risk); }
+
+/* Tables */
+table{ width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+th,td{ padding:6px 8px; border:1px solid var(--border); text-align:left; vertical-align:top; }
+th{ background:#f8fafc; font-weight:600; font-size:11.5px; }
+
+.person-meta{ font-weight:400; color:var(--muted); font-size:12px; margin-left:6px; }
+.goals-line{ display:flex; flex-wrap:wrap; gap:10px; }
+
+/* Inline badge helpers (bug-alert, sec-alert, rft-alert, wait-badge, updated-badge) */
+.bug-alert{ background:#fee2e2; color:#991b1b; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.sec-alert{ background:#ede9fe; color:#5b21b6; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.rft-alert{ background:#dbeafe; color:#1e40af; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.wait-badge{ background:#fef3c7; color:#92400e; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.updated-badge{ background:#f1f5f9; color:#475569; padding:1px 6px; border-radius:4px; font-size:10.5px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; margin-left:4px; }
+</style>
+</head>
+<body>
+<h1>📋 Sprint Pulse <span class="sub">HCQ FE · 2026-04-28 · Sprint 20579 · day 13/13</span></h1>
+<div class="banner">
+  <span class="verdict bad">🔴 Ризик невиконання</span>
+  <p class="pulse-summary">G1 done, G2 done, G3 ще не стартувала, G4 ще не стартувала</p>
+</div>
+<div class="card rp">
+  <h2>🚨 Release Pressure</h2>
+  <p class="section-hint">Таски з release date ≤ 2 дні, які ще не у QA-флоу. Треба рішення: пушимо сьогодні чи рухаємо RD.</p>
+  <div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25447" target="_blank" rel="noopener">🔹 <code>WEB-25447</code></a> <span class="chip progress">In Progress</span> <span class="sp">5 SP</span> <span class="chip rd-crit">RD 2026-04-24 (4д тому)</span> — [HCQ] Migrate to schemas typical info-pages &amp; funnel pages <span class="hint">@Vitalii Lazarenko</span><span class="sec-alert">🛡 security: WEB-25494</span><span class="stale hot">⏳ 9 дн.</span> <span class="updated-badge">🕒 2026-04-28</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-24465" target="_blank" rel="noopener">🔹 <code>WEB-24465</code></a> <span class="chip progress">In Progress</span> <span class="g g3">G3</span> <span class="sp">8 SP</span><span class="sp">13 QA</span> <span class="chip rd-crit">RD 2026-04-29 (1д)</span> — [HC Quiz FE] Move questionnaire creation to the first page (partial rollout)  <span class="hint">@Mykyta Chaika</span><span class="sec-alert">🛡 security: WEB-24735</span><span class="stale hot">⏳ 45 дн.</span> <span class="updated-badge">🕒 2026-04-21</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-24474" target="_blank" rel="noopener">🔹 <code>WEB-24474</code></a> <span class="chip todo">Dev Backlog</span> <span class="g g3">G3</span> <span class="sp">5 SP</span><span class="sp">8 QA</span> <span class="chip rd-crit">RD 2026-04-29 (1д)</span> — [HC Quiz FE] Logic rollout on all flows + old logic cleanup<span class="sec-alert">🛡 security: WEB-24738</span><span class="stale hot">⏳ 44 дн.</span> <span class="updated-badge">🕒 2026-04-21</span></div>
+</div>
+<div class="card">
+  <h2>🏴 Sprint Goals</h2>
+  <p class="section-hint">Чотири цілі спринту зі Sprint review таски. Прогрес % — SP Done / SP Total серед тасок цілі.</p>
+  <div class="t"><span class="g g1">G1</span> <strong>[Content manager] [New Topic] - Barre flow without equipment for Young</strong> <span class="chip done">Accepted</span> <span class="hint">100% · 0/0 SP · 0/0 QA</span> <span class="chip done">Done</span></div><div class="t"><span class="g g2">G2</span> <strong>[China]: Create custom checkout page without onboarding</strong> <span class="chip done">Done</span> <span class="hint">100% · 8/8 SP · 8/8 QA</span> <span class="chip done">Done</span></div><div class="t"><span class="g g3">G3</span> <strong>[WEB] Agreements without bettermeUserId</strong> <span class="chip todo">Dev Backlog</span> <span class="hint">0% · 0/13 SP · 0/21 QA</span></div>
+<div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-24465" target="_blank" rel="noopener">🔹 <code>WEB-24465</code></a> <span class="chip progress">In Progress</span> <span class="g g3">G3</span> <span class="sp">8 SP</span><span class="sp">13 QA</span> <span class="chip rd-crit">RD 2026-04-29 (1д)</span> — [HC Quiz FE] Move questionnaire creation to the first page (partial rollout) <span class="sec-alert">🛡 security: WEB-24735</span><span class="stale hot">⏳ 45 дн.</span> <span class="updated-badge">🕒 2026-04-21</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-24474" target="_blank" rel="noopener">🔹 <code>WEB-24474</code></a> <span class="chip todo">Dev Backlog</span> <span class="g g3">G3</span> <span class="sp">5 SP</span><span class="sp">8 QA</span> <span class="chip rd-crit">RD 2026-04-29 (1д)</span> — [HC Quiz FE] Logic rollout on all flows + old logic cleanup<span class="sec-alert">🛡 security: WEB-24738</span><span class="stale hot">⏳ 44 дн.</span> <span class="updated-badge">🕒 2026-04-21</span></div><div class="note warn">⚠️ Блокери: WEB-24465, WEB-24474</div><div class="t"><span class="g g4">G4</span> <strong>Female Calisthenics - preselect plan</strong> <span class="chip progress">In Progress</span> <span class="hint">0% · 0/0 SP · 0/0 QA</span></div>
+<div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-24457" target="_blank" rel="noopener">🎨 <code>WEB-24457</code></a> <span class="chip progress">In Progress</span> <span class="g g4">G4</span>  — Female Calisthenics - preselect plan<span class="stale hot">⏳ 45 дн.</span> <span class="updated-badge">🕒 2026-04-23</span></div>
+</div>
+<div class="card">
+  <h2>🔄 Активні задачі по розробниках</h2>
+  <p class="section-hint">Те, що зараз у роботі у dev-команди. Поруч із тікетом — інлайн-бейджі: story bugs, security, RFT/RFD. Ролеві таски не рахуються у ліміт.</p>
+  <h3>Mykyta Chaika <span class="person-meta">— 2 активних · 1 role</span></h3>
+<div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-24465" target="_blank" rel="noopener">🔹 <code>WEB-24465</code></a> <span class="chip progress">In Progress</span> <span class="g g3">G3</span> <span class="sp">8 SP</span><span class="sp">13 QA</span> <span class="chip rd-crit">RD 2026-04-29 (1д)</span> — [HC Quiz FE] Move questionnaire creation to the first page (partial rollout) <span class="sec-alert">🛡 security: WEB-24735</span><span class="stale hot">⏳ 45 дн.</span> <span class="updated-badge">🕒 2026-04-21</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-23979" target="_blank" rel="noopener">🪲 <code>WEB-23979</code></a> <span class="chip testing">In Testing</span> <span class="sp">2 SP</span><span class="sp">2 QA</span> — After reloading the e-comm upsell page, the purchase redirects to the first page<span class="sec-alert">🛡 security: WEB-23991</span> <span class="updated-badge">🕒 2026-04-28</span></div><div class="note">Role: WEB-25428 (Security Champion)</div><h3>Vitalii Lazarenko <span class="person-meta">— 2 активних</span></h3>
+<div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25447" target="_blank" rel="noopener">🔹 <code>WEB-25447</code></a> <span class="chip progress">In Progress</span> <span class="sp">5 SP</span> <span class="chip rd-crit">RD 2026-04-24 (4д тому)</span> — [HCQ] Migrate to schemas typical info-pages &amp; funnel pages<span class="sec-alert">🛡 security: WEB-25494</span><span class="stale hot">⏳ 9 дн.</span> <span class="updated-badge">🕒 2026-04-28</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25572" target="_blank" rel="noopener">🔹 <code>WEB-25572</code></a> <span class="chip testing">In Testing</span> <span class="sp">3 SP</span><span class="sp">3 QA</span> — [HCQ] Migrate Scratch Card page to schemas<span class="sec-alert">🛡 security: WEB-25573</span> <span class="updated-badge">🕒 2026-04-27</span></div><h3>Anastasiia Motsukh <span class="person-meta">— 3 активних · ⚠️ перевантаж.</span></h3>
+<div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25415" target="_blank" rel="noopener">🔹 <code>WEB-25415</code></a> <span class="chip progress">In Progress</span> <span class="sp">5 SP</span><span class="sp">8 QA</span> — Tori Repa Pilates Challenge - Checkout<span class="sec-alert">🛡 security: WEB-25435</span><span class="stale hot">⏳ 10 дн.</span> <span class="updated-badge">🕒 2026-04-27</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25414" target="_blank" rel="noopener">🔹 <code>WEB-25414</code></a> <span class="chip testing">Ready for Testing</span> <span class="sp">2 SP</span> — Tori Repa Pilates Challenge - Fonts<span class="sec-alert">🛡 security: WEB-25434</span><span class="rft-alert">🧪 RFT: чекає QA pickup</span> <span class="updated-badge">🕒 2026-04-27</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25413" target="_blank" rel="noopener">🔹 <code>WEB-25413</code></a> <span class="chip testing">In Testing</span> <span class="sp">8 SP</span><span class="sp">8 QA</span> — Tori Repa Pilates Challenge - Onboarding<span class="sec-alert">🛡 security: WEB-25433</span> <span class="updated-badge">🕒 2026-04-28</span></div><h3>Maksym Rozhaiev <span class="person-meta">— немає активних</span></h3>
+</div>
+<div class="card">
+  <h2>🧪 QA команда — навантаження</h2>
+  <p class="section-hint">Окремий зріз по QA: хто що тестує, черга RFT, QA estimates. Ролеві QA Watchman не рахуються у ліміт.</p>
+  <h3>Oleksandr Mekhed <span class="person-meta">— 0 активних</span></h3><p class="note">Немає активного тесту.</p><h3>Anna Shyrokova <span class="person-meta">— 0 активних · QA Watchman</span></h3><p class="note">Немає активного тесту.</p><h3>Mykhailenko Mykhailo <span class="person-meta">— 0 активних</span></h3><p class="note">Немає активного тесту.</p><h3>Iryna Partaloga <span class="person-meta">— 1 активних</span></h3><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25104" target="_blank" rel="noopener">🧪 <code>WEB-25104</code></a> <span class="chip progress">In Progress</span> <span class="sp">5 QA</span> — VRT<span class="bug-alert">⛔ story bugs: WEB-25295</span><span class="stale hot">⏳ 20 дн.</span> <span class="updated-badge">🕒 2026-04-22</span></div>
+  <h3>Черга на QA (RFT)</h3><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25598" target="_blank" rel="noopener">🪲 <code>WEB-25598</code></a> <span class="chip testing">Ready for Testing</span> <span class="sp">1 SP</span><span class="sp">3 QA</span> — browsers incorrectly invert colours if the dark theme is selected on the device <span class="hint">@maksym.rozhaiev</span><span class="sec-alert">🛡 security: WEB-25603</span><span class="rft-alert">🧪 RFT: чекає QA pickup</span> <span class="updated-badge">🕒 2026-04-28</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-22147" target="_blank" rel="noopener">🪲 <code>WEB-22147</code></a> <span class="chip testing">Ready for Testing</span> <span class="sp">1 SP</span> — Need to fix graph value and BMI UI <span class="hint">@maksym.rozhaiev</span><span class="sec-alert">🛡 security: WEB-25642</span><span class="rft-alert">🧪 RFT: чекає QA pickup</span> <span class="updated-badge">🕒 2026-04-28</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-23184" target="_blank" rel="noopener">🪲 <code>WEB-23184</code></a> <span class="chip testing">Ready for Testing</span> <span class="sp">1 SP</span> — incorrectly graph after the calendar, when current weight=goal weight <span class="hint">@maksym.rozhaiev</span><span class="sec-alert">🛡 security: WEB-25641</span><span class="rft-alert">🧪 RFT: чекає QA pickup</span> <span class="updated-badge">🕒 2026-04-28</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25414" target="_blank" rel="noopener">🔹 <code>WEB-25414</code></a> <span class="chip testing">Ready for Testing</span> <span class="sp">2 SP</span> — Tori Repa Pilates Challenge - Fonts <span class="hint">@Anastasiia Motsukh</span><span class="sec-alert">🛡 security: WEB-25434</span><span class="rft-alert">🧪 RFT: чекає QA pickup</span> <span class="updated-badge">🕒 2026-04-27</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-24943" target="_blank" rel="noopener">🪲 <code>WEB-24943</code></a> <span class="chip testing">Ready for Testing</span> <span class="sp">1 SP</span> — colour doesnt match the design on the fitness age page <span class="hint">@maksym.rozhaiev</span><span class="sec-alert">🛡 security: WEB-25592</span><span class="rft-alert">🧪 RFT: чекає QA pickup</span><span class="wait-badge">⏳ Ready for Testing ≥3 дн.</span><span class="stale">⏳ 3 дн.</span> <span class="updated-badge">🕒 2026-04-23</span></div><div class="t"><a href="https://newsiteam.atlassian.net/browse/WEB-25028" target="_blank" rel="noopener">🪲 <code>WEB-25028</code></a> <span class="chip testing">Ready for Testing</span> <span class="sp">1 SP</span><span class="sp">1 QA</span> — The title of the lower paywall does not match the design <span class="hint">@maksym.rozhaiev</span><span class="sec-alert">🛡 security: WEB-25593</span><span class="rft-alert">🧪 RFT: чекає QA pickup</span><span class="wait-badge">⏳ Ready for Testing ≥3 дн.</span><span class="stale">⏳ 3 дн.</span> <span class="updated-badge">🕒 2026-04-23</span></div>
+  <div class="note warn">QA estimates не проставлені у: WEB-23906 (0 SP), WEB-23761 (0 SP), WEB-25532 (0 SP), WEB-25552 (1 SP), WEB-23989 (1 SP), WEB-23377 (0 SP), WEB-21971 (0 SP), WEB-25447 (5 SP), WEB-25624 (0 SP), WEB-25384 (0 SP), ...</div>
+</div>
+
+<div class="card">
+  <h2>🔔 Subtasks — увага</h2>
+  <p class="section-hint">Sub-tasks, які блокують перехід parent-таски: story bugs, security, test-cases.</p>
+  <table>
+    <thead><tr><th>Sub-task</th><th>Parent</th><th>Parent status</th><th>Пріоритет</th></tr></thead>
+    <tbody><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25642" target="_blank">WEB-25642</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] Need to fix graph value and BMI UI</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-22147" target="_blank">WEB-22147</a> </td>
+    <td><span class="chip testing">Ready for Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25641" target="_blank">WEB-25641</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] incorrectly graph after the calendar, when current weight=goal weight</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-23184" target="_blank">WEB-23184</a> </td>
+    <td><span class="chip testing">Ready for Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-23991" target="_blank">WEB-23991</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] After reloading the e-comm upsell page, the purchase redirects to the first page</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-23979" target="_blank">WEB-23979</a> </td>
+    <td><span class="chip testing">In Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24458" target="_blank">WEB-24458</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] Female Calisthenics - preselect plan</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24417" target="_blank">WEB-24417</a> </td>
+    <td><span class="chip testing">In Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25592" target="_blank">WEB-25592</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] colour doesnt match the design on the fitness age page</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24943" target="_blank">WEB-24943</a> </td>
+    <td><span class="chip testing">Ready for Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25593" target="_blank">WEB-25593</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] The title of the lower paywall does not match the design</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25028" target="_blank">WEB-25028</a> </td>
+    <td><span class="chip testing">Ready for Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25433" target="_blank">WEB-25433</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] Tori Repa Pilates Challenge - Onboarding</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25413" target="_blank">WEB-25413</a> </td>
+    <td><span class="chip testing">In Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25434" target="_blank">WEB-25434</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] Tori Repa Pilates Challenge - Fonts</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25414" target="_blank">WEB-25414</a> </td>
+    <td><span class="chip testing">Ready for Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25573" target="_blank">WEB-25573</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] [HCQ] Migrate Scratch Card page to schemas</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25572" target="_blank">WEB-25572</a> </td>
+    <td><span class="chip testing">In Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25603" target="_blank">WEB-25603</a> <span class="chip todo">Open</span> <span class="hint">[Security Champion] browsers incorrectly invert colours if the dark theme is selected on the device</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25598" target="_blank">WEB-25598</a> </td>
+    <td><span class="chip testing">Ready for Testing</span></td>
+    <td><span class="chip prio-high">🚨 close-first</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-23773" target="_blank">WEB-23773</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Fix submit animated button clear timeout</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-21706" target="_blank">WEB-21706</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25536" target="_blank">WEB-25536</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Migration redesign 2209 and 4319 </span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-23754" target="_blank">WEB-23754</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25105" target="_blank">WEB-25105</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Analytics events issues on Mini pilates reformer upsell page</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-23977" target="_blank">WEB-23977</a> </td>
+    <td><span class="chip done">Done</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24691" target="_blank">WEB-24691</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] China legal docs in markdown</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24690" target="_blank">WEB-24690</a> </td>
+    <td><span class="chip done">Done</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24695" target="_blank">WEB-24695</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] [Optimization] filter unused i18n terms from the resulting page data</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24694" target="_blank">WEB-24694</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24952" target="_blank">WEB-24952</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Control image quality</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24950" target="_blank">WEB-24950</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25280" target="_blank">WEB-25280</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Localization 4503 - IT DE FR ES PT TR PL CN AR DA TH KO JA VI RO AF CS NL ID SV EL HE</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24984" target="_blank">WEB-24984</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25000" target="_blank">WEB-25000</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Male Sex Wellness - Put all feature together</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-24994" target="_blank">WEB-24994</a> </td>
+    <td><span class="chip done">Done</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25148" target="_blank">WEB-25148</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] 2160 | /checkout-default-remarketing-brand-palette, /checkout-remarketing-brand-palette (dynamic/static) - not all fields have been filled in</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25001" target="_blank">WEB-25001</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25142" target="_blank">WEB-25142</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] China Logic on default flow - var. C</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25115" target="_blank">WEB-25115</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25332" target="_blank">WEB-25332</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Improving OTEL Custom Metrics with SSR</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25331" target="_blank">WEB-25331</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25411" target="_blank">WEB-25411</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion]  [New Topic] - Barre flow with equipment for Young</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25377" target="_blank">WEB-25377</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25477" target="_blank">WEB-25477</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Betterme band block color do not match design</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25399" target="_blank">WEB-25399</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25432" target="_blank">WEB-25432</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] [China]: Create custom checkout page without onboarding</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25431" target="_blank">WEB-25431</a> <span class="g g2">G2</span></td>
+    <td><span class="chip done">Done</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25485" target="_blank">WEB-25485</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Incorrect text color on label Dobivashka page</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25484" target="_blank">WEB-25484</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25510" target="_blank">WEB-25510</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Text about charging funds from card is missing on Shipping info page</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25493" target="_blank">WEB-25493</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25499" target="_blank">WEB-25499</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] [HCQ] Migrate Purchase page to schemas</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25498" target="_blank">WEB-25498</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25511" target="_blank">WEB-25511</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] PP Upsell differs for Improve posture goal</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25500" target="_blank">WEB-25500</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25509" target="_blank">WEB-25509</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Remarketing page doesn&#39;t open </span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25505" target="_blank">WEB-25505</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr><tr>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25551" target="_blank">WEB-25551</a> <span class="chip todo">Done Security</span> <span class="hint">[Security Champion] Замінити файл шрифта</span></td>
+    <td><a href="https://newsiteam.atlassian.net/browse/WEB-25550" target="_blank">WEB-25550</a> </td>
+    <td><span class="chip done">Accepted</span></td>
+    <td><span class="chip todo">after-parent</span></td>
+  </tr></tbody>
+  </table>
+</div>
+<div class="card risk">
+  <h2>⚠️ Блокери та ризики</h2>
+  <p class="section-hint">Jira-лінки is blocked by, cross-team залежності, stale Under Review, On hold &gt; 2 днів, прострочені due dates.</p>
+  <div class="t">
+    <a href="https://newsiteam.atlassian.net/browse/WEB-23377" target="_blank">WEB-23377</a>
+    <span class="chip todo">To Do</span> — due 2026-01-02 прострочено
+     <span class="hint">@Hanna Yeshchenko</span>
+  </div><div class="t">
+    <a href="https://newsiteam.atlassian.net/browse/WEB-25046" target="_blank">WEB-25046</a>
+    <span class="chip onhold">On hold</span> — On hold 10 дн.
+     <span class="hint">@Mykyta Chaika</span>
+  </div><div class="t">
+    <a href="https://newsiteam.atlassian.net/browse/WEB-24679" target="_blank">WEB-24679</a>
+    <span class="chip onhold">On hold</span> — On hold 28 дн.
+     <span class="hint">@Mykyta Chaika</span>
+  </div><div class="t">
+    <a href="https://newsiteam.atlassian.net/browse/WEB-24674" target="_blank">WEB-24674</a>
+    <span class="chip onhold">On hold</span> — On hold 28 дн.
+     <span class="hint">@Mykyta Chaika</span>
+  </div>
+</div>
+<div class="card">
+  <h2>🐞 Bugs no progress</h2>
+  <p class="section-hint">Bug-тікети без прогресу &gt; 5 днів. Репортер — забирай у роботу через /bug-bot pick у #hcq-bug-bot.</p>
+  <h3>👤 Iryna Partaloga <span class="person-meta">— 5 баг(и) без руху</span></h3><ul><li><a href="https://newsiteam.atlassian.net/browse/WEB-25557" target="_blank">WEB-25557</a> <span class="chip todo">Medium</span> <span class="hint">The pulsation of the ʼAdd to my planʼ button on PP is almost invisible (2 дн.)</span></li><li><a href="https://newsiteam.atlassian.net/browse/WEB-24819" target="_blank">WEB-24819</a> <span class="chip todo">Medium</span> <span class="hint">the disclaimer isnt visible on the loader (9 дн.)</span></li><li><a href="https://newsiteam.atlassian.net/browse/WEB-25202" target="_blank">WEB-25202</a> <span class="chip prio-high">High</span> <span class="hint">Any flow with multiple consents during onboarding (9 дн.)</span></li><li><a href="https://newsiteam.atlassian.net/browse/WEB-25607" target="_blank">WEB-25607</a> <span class="chip prio-high">High</span> <span class="hint">browsers incorrectly invert colours if the dark theme is selected on the device | p.2 (2 дн.)</span></li><li><a href="https://newsiteam.atlassian.net/browse/WEB-25295" target="_blank">WEB-25295</a> <span class="chip todo">Medium</span> <span class="hint">Improvements needed | dev (14 дн.)</span></li></ul><h3>👤 Mykhailo Mykhailenko <span class="person-meta">— 1 баг(и) без руху</span></h3><ul><li><a href="https://newsiteam.atlassian.net/browse/WEB-25408" target="_blank">WEB-25408</a> <span class="chip todo">Medium</span> <span class="hint">On TokenX payment form invalid font on text &quot;Name on card&quot; (6 дн.)</span></li></ul><h3>👤 Anna Shyrokova <span class="person-meta">— 1 баг(и) без руху</span></h3><ul><li><a href="https://newsiteam.atlassian.net/browse/WEB-25400" target="_blank">WEB-25400</a> <span class="chip todo">Medium</span> <span class="hint">Side indents at checkout on the reviews block are differs from design (9 дн.)</span></li></ul><h3>👤 Anastasiia Motsukh <span class="person-meta">— 1 баг(и) без руху</span></h3><ul><li><a href="https://newsiteam.atlassian.net/browse/WEB-25066" target="_blank">WEB-25066</a> <span class="chip prio-high">High</span> <span class="hint">Research for FR lang &quot;!&quot; (9 дн.)</span></li></ul>
+</div>
+<div class="card">
+  <h2>⚡ Velocity / Scope</h2>
+  <p class="section-hint">Закриті SP / активні SP / заморожені. QA Total — весь QA scope (не лише done/active).</p>
+  <div class="kpi-strip">
+    <div class="kpi green">
+  <div class="lbl">DEV Done</div>
+  <div class="val">62 SP</div>
+  <div class="sub">13/13 day</div>
+</div>
+    <div class="kpi yellow">
+  <div class="lbl">DEV Active</div>
+  <div class="val">69 SP</div>
+  <div class="sub">IP/UR/RFT/IT/RFD</div>
+</div>
+    <div class="kpi red">
+  <div class="lbl">DEV On Hold</div>
+  <div class="val">12 SP</div>
+  <div class="sub">on hold + blocked</div>
+</div>
+    <div class="kpi ">
+  <div class="lbl">DEV Total</div>
+  <div class="val">143 SP</div>
+  <div class="sub">сумарно у спринті</div>
+</div>
+    <div class="kpi green">
+  <div class="lbl">QA Done</div>
+  <div class="val">81</div>
+  <div class="sub">QA estimates done</div>
+</div>
+    <div class="kpi yellow">
+  <div class="lbl">QA Active</div>
+  <div class="val">36</div>
+  <div class="sub">In Testing + QA IP</div>
+</div>
+    <div class="kpi ">
+  <div class="lbl">QA Total</div>
+  <div class="val">180</div>
+  <div class="sub">~45% QA done · RFT: 4 · On hold: 13</div>
+</div>
+  </div>
+  <p class="hint">Темп нижче очікуваного, G1 ✅, G2 ✅, G3 risk, G4 in-progress.</p>
+</div>
+<div class="card">
+  <h2>❓ Питання на стендап</h2>
+  <p class="section-hint">Top-5 питань, які реально потребують обговорення на daily.</p>
+  <ol><li>@Hanna Yeshchenko — WEB-23377: due date прострочено на 116 дн.</li><li>@maksym.rozhaiev — WEB-24943: RFT ≥ 3 дн. — pinguvat QA</li><li>@maksym.rozhaiev — WEB-25028: RFT ≥ 3 дн. — pinguvat QA</li><li>@health-coaching_team — WEB-24819: зв&#39;язки blocked by: WEB-23436 (cross-project)</li><li>@Anastasiia Motsukh — WEB-25415: перевантаження @Anastasiia Motsukh: 3 активних</li></ol>
+</div>
+<div class="card">
+  <h2>🎬 SM Actions</h2>
+  <p class="section-hint">Дії Scrum Master після стендапу.</p>
+  <ol><li>Escalation: verdict off-track — обговорити з PO scope-cut або перенесення цілей.</li><li>Release pressure: 3 таск(и) з RD ≤ 2 дн — синк з PO про пріоритет.</li><li>Пінгнути репортерів: Iryna Partaloga, Mykhailo Mykhailenko, Anna Shyrokova — забрати баги через bug-bot.</li><li>QA pickup: WEB-25598, WEB-22147, WEB-23184 — черга на тест.</li></ol>
+</div>
+<p class="hint">Generated 2026-04-28T11:29:21.739Z · <a href="../index.html">← всі звіти</a> · <a href="../live/">live dashboard</a></p>
+</body>
+</html>
