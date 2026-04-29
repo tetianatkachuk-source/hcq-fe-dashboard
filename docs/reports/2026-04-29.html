@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Daily Scrum | HCQ FE | 2026-04-29</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{
+  --ink:#0f172a; --muted:#64748b; --border:#e4e7ec;
+  --link:#2563eb; --risk:#dc2626; --accent:#64748b;
+  --bg:#f5f6f8; --card-bg:#fcfdff;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; padding:24px; font:14px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); }
+h1{ font-size:22px; margin:0 0 6px; border-bottom:2px solid var(--border); padding-bottom:8px; }
+h1 .sub{ font-size:13px; color:var(--muted); font-weight:400; margin-left:8px; }
+h2{ font-size:15px; margin:0 0 2px; }
+h3{ font-size:13.5px; margin:14px 0 4px; }
+a{ color:var(--link); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+.section-hint{ color:var(--muted); font-style:italic; font-size:12.5px; margin:2px 0 10px; }
+.card{ background:var(--card-bg); border:1px solid var(--border); border-left:4px solid var(--accent);
+       padding:14px 18px; margin:12px 0; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,0.03); }
+.card.risk{ border-left-color:var(--risk); }
+.card.rp{ border-left-color:var(--risk); background:#fff7f7; }
+.banner{ background:#f8fafc; border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:8px 0 16px; }
+.banner .verdict{ display:inline-block; font-weight:600; padding:3px 10px; border-radius:6px; background:#fef3c7; color:#92400e; margin-right:10px; }
+.banner .verdict.ok{ background:#dcfce7; color:#166534; }
+.banner .verdict.bad{ background:#fee2e2; color:#991b1b; }
+.banner .pulse-summary{ display:inline; font-size:13.5px; color:var(--ink); margin:0; }
+
+/* Chips */
+.chip{ display:inline-block; font-weight:500; font-size:11px; letter-spacing:0; text-transform:none;
+       padding:2px 7px; border-radius:6px; margin:1px 2px 1px 0; }
+.chip.todo{ background:#f1f5f9; color:#475569; }
+.chip.progress{ background:#fff4e5; color:#9a6a2e; }
+.chip.review{ background:#fef7e0; color:#8a6d1e; }
+.chip.testing{ background:#e0ecfd; color:#3a5aa8; }
+.chip.rfd{ background:#d7f1f4; color:#205f70; }
+.chip.done{ background:#ddf4e2; color:#2e6b3b; }
+.chip.onhold{ background:#e4e7ec; color:#3a4553; }
+.chip.blocked,.chip.open{ background:#fbdada; color:#8a3030; font-weight:600; }
+.chip.prio-high{ background:#fbdada; color:#8a3030; }
+.chip.rd{ background:#e0ecfd; color:#3a5aa8; }
+.chip.rd-warn{ background:#fdf0d9; color:#8a5a1c; }
+.chip.rd-crit{ background:#fbdada; color:#8a3030; font-weight:600; }
+
+/* Goal badges */
+.g{ display:inline-block; padding:2px 7px; border-radius:4px; font-weight:700; font-size:11px; color:#fff; margin-right:6px; }
+.g.g1{ background:#c2410c; }
+.g.g2{ background:#2563eb; }
+.g.g3{ background:#7c3aed; }
+.g.g4{ background:#059669; }
+
+.sp{ color:var(--muted); font-weight:600; font-size:12px; margin-left:6px; }
+.role{ background:#eef2ff; color:#3730a3; font-size:11px; padding:2px 7px; border-radius:6px; margin:0 3px; }
+.stale{ background:#fed7aa; color:#7c2d12; font-size:11px; padding:2px 7px; border-radius:6px; margin-left:6px; }
+.stale.hot{ background:#fecaca; color:#7f1d1d; }
+.delta-inline{ display:inline-block; font-size:12px; padding:1px 5px; border-radius:4px; background:#fff; border:1px solid var(--border); margin-left:6px; color:var(--muted); }
+
+/* Task rows */
+.t{ font-size:13.5px; margin:4px 0; line-height:1.6; }
+.note{ color:var(--muted); font-size:12.5px; margin:6px 0 0 20px; }
+.note.warn{ color:#9a6a2e; }
+.note.danger{ color:var(--risk); }
+.hint{ color:var(--muted); font-size:12.5px; }
+
+/* KPI tiles */
+.kpi-strip{ display:grid; grid-template-columns:repeat(auto-fit, minmax(135px, 1fr)); gap:10px; margin:10px 0 6px; }
+.kpi{ background:#fff; border:1px solid var(--border); border-radius:7px; padding:8px 10px; }
+.kpi .lbl{ font-size:10.5px; text-transform:uppercase; letter-spacing:0.02em; color:var(--muted); }
+.kpi .val{ font-size:19px; font-weight:700; line-height:1.1; margin-top:3px; }
+.kpi .sub{ font-size:10.5px; color:var(--muted); margin-top:3px; }
+.kpi.green .val{ color:#15803d; }
+.kpi.yellow .val{ color:#a16207; }
+.kpi.red .val{ color:var(--risk); }
+
+/* Tables */
+table{ width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+th,td{ padding:6px 8px; border:1px solid var(--border); text-align:left; vertical-align:top; }
+th{ background:#f8fafc; font-weight:600; font-size:11.5px; }
+
+.person-meta{ font-weight:400; color:var(--muted); font-size:12px; margin-left:6px; }
+.goals-line{ display:flex; flex-wrap:wrap; gap:10px; }
+
+/* Inline badge helpers (bug-alert, sec-alert, rft-alert, wait-badge, updated-badge) */
+.bug-alert{ background:#fee2e2; color:#991b1b; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.sec-alert{ background:#ede9fe; color:#5b21b6; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.rft-alert{ background:#dbeafe; color:#1e40af; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.wait-badge{ background:#fef3c7; color:#92400e; padding:1px 6px; border-radius:4px; font-size:11px; margin-left:4px; }
+.updated-badge{ background:#f1f5f9; color:#475569; padding:1px 6px; border-radius:4px; font-size:10.5px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; margin-left:4px; }
+</style>
+</head>
+<body>
+<h1>📋 Daily Scrum <span class="sub">HCQ FE · 2026-04-29 · Sprint 21219 · day 2/14</span></h1>
+<div class="banner">
+  <span class="verdict ok">🟢 У графіку</span>
+  <p class="pulse-summary"></p>
+</div>
+
+<div class="card">
+  <h2>🏴 Sprint Goals</h2>
+  <p class="section-hint">Чотири цілі спринту зі Sprint review таски. Прогрес % — SP Done / SP Total серед тасок цілі.</p>
+  
+</div>
+<div class="card">
+  <h2>🔄 Активні задачі по розробниках</h2>
+  <p class="section-hint">Те, що зараз у роботі у dev-команди. Поруч із тікетом — інлайн-бейджі: story bugs, security, RFT/RFD. Ролеві таски не рахуються у ліміт.</p>
+  <h3>Mykyta Chaika <span class="person-meta">— немає активних</span></h3><h3>Vitalii Lazarenko <span class="person-meta">— немає активних</span></h3><h3>Anastasiia Motsukh <span class="person-meta">— немає активних</span></h3><h3>Maksym Rozhaiev <span class="person-meta">— немає активних</span></h3>
+</div>
+<div class="card">
+  <h2>🧪 QA команда — навантаження</h2>
+  <p class="section-hint">Окремий зріз по QA: хто що тестує, черга RFT, QA estimates. Ролеві QA Watchman не рахуються у ліміт.</p>
+  <h3>Oleksandr Mekhed <span class="person-meta">— 0 активних</span></h3><p class="note">Немає активного тесту.</p><h3>Anna Shyrokova <span class="person-meta">— 0 активних</span></h3><p class="note">Немає активного тесту.</p><h3>Mykhailenko Mykhailo <span class="person-meta">— 0 активних</span></h3><p class="note">Немає активного тесту.</p><h3>Iryna Partaloga <span class="person-meta">— 0 активних</span></h3><p class="note">Немає активного тесту.</p>
+  <p class="note">Черга RFT порожня.</p>
+  <div class="note warn">QA estimates не проставлені у: WEB-25648 (5 SP), WEB-25647 (3 SP), WEB-25376 (0 SP)</div>
+</div>
+
+
+<div class="card risk">
+  <h2>⚠️ Блокери та ризики</h2>
+  <p class="section-hint">Jira-лінки is blocked by, cross-team залежності, stale Under Review, On hold &gt; 2 днів, прострочені due dates.</p>
+  <div class="t">
+    <a href="https://newsiteam.atlassian.net/browse/WEB-25376" target="_blank">WEB-25376</a>
+    <span class="chip onhold">On hold</span> — On hold 10 дн.
+     <span class="hint">Bogdan Sorobei</span>
+  </div><div class="t">
+    <a href="https://newsiteam.atlassian.net/browse/WEB-25006" target="_blank">WEB-25006</a>
+    <span class="chip onhold">On hold</span> — On hold 4 дн.
+     <span class="hint">Bogdan Sorobei</span>
+  </div><div class="t">
+    <a href="https://newsiteam.atlassian.net/browse/WEB-21651" target="_blank">WEB-21651</a>
+    <span class="chip onhold">On hold</span> — On hold 75 дн.
+     <span class="hint">Danylo Ivanushkin</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2>⚡ Velocity / Scope</h2>
+  <p class="section-hint">Закриті SP / активні SP / заморожені. QA Total — весь QA scope (не лише done/active).</p>
+  <div class="kpi-strip">
+    <div class="kpi green">
+  <div class="lbl">DEV Done</div>
+  <div class="val">1 SP</div>
+  <div class="sub">2/14 day</div>
+</div>
+    <div class="kpi yellow">
+  <div class="lbl">DEV Active</div>
+  <div class="val">21 SP</div>
+  <div class="sub">IP/UR/RFT/IT/RFD</div>
+</div>
+    <div class="kpi red">
+  <div class="lbl">DEV On Hold</div>
+  <div class="val">3 SP</div>
+  <div class="sub">on hold + blocked</div>
+</div>
+    <div class="kpi ">
+  <div class="lbl">DEV Total</div>
+  <div class="val">25 SP</div>
+  <div class="sub">сумарно у спринті</div>
+</div>
+    <div class="kpi green">
+  <div class="lbl">QA Done</div>
+  <div class="val">3</div>
+  <div class="sub">QA estimates done</div>
+</div>
+    <div class="kpi yellow">
+  <div class="lbl">QA Active</div>
+  <div class="val">0</div>
+  <div class="sub">In Testing + QA IP</div>
+</div>
+    <div class="kpi ">
+  <div class="lbl">QA Total</div>
+  <div class="val">69</div>
+  <div class="sub">~4% QA done · On hold: 11</div>
+</div>
+  </div>
+  <p class="hint">Прогноз закриття за поточним темпом: ~7 SP / 25 SP у спринті.</p>
+</div>
+<div class="card">
+  <h2>❓ Питання на стендап</h2>
+  <p class="section-hint">Top-5 питань, які реально потребують обговорення на daily.</p>
+  <ol><li>Bogdan Sorobei — WEB-25376: On hold 10 дн. без апдейту</li><li>Bogdan Sorobei — WEB-25006: On hold 4 дн. без апдейту</li><li>Danylo Ivanushkin — WEB-21651: On hold 75 дн. без апдейту</li></ol>
+</div>
+<p class="hint">Generated 2026-04-29T11:20:53.313Z · <a href="../index.html">← всі звіти</a> · <a href="../live/">live dashboard</a></p>
+</body>
+</html>
