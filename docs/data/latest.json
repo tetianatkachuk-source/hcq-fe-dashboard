@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-04-30T17:04:03.898Z",
+  "generatedAt": "2026-04-30T20:45:35.507Z",
   "variant": "pulse",
   "sprint": {
     "id": 20445,
     "name": "Революційний 25_26 🇫🇷✊🕊️",
-    "dayN": 1,
+    "dayN": 2,
     "totalDays": 14,
     "startDate": "2026-04-30T07:43:18.109Z",
     "endDate": "2026-05-14T06:36:07.000Z"
   },
-  "verdict": "on-track",
+  "verdict": "at-risk",
   "verdictSummary": "",
   "goals": [],
   "tickets": [
