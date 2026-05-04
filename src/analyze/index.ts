@@ -45,27 +45,36 @@ export async function buildReport(
   const now = new Date();
 
   // Hydrate changelog for tickets where stale-days actually matters.
-  await Promise.all(
-    allIssues.map(async (issue) => {
-      if (issue.changelog && issue.changelog.histories?.length) return; // already have it
-      const status = (issue.fields?.status?.name as string) ?? '';
-      const needsChangelog =
-        bucketOf(status as any) === 'progress' ||
-        bucketOf(status as any) === 'review' ||
-        bucketOf(status as any) === 'rft' ||
-        bucketOf(status as any) === 'testing' ||
-        bucketOf(status as any) === 'rfd' ||
-        bucketOf(status as any) === 'onhold' ||
-        bucketOf(status as any) === 'blocked';
-      if (!needsChangelog) return;
-      try {
-        const full = await client.getIssue(issue.key, { expand: ['changelog'] });
-        issue.changelog = full.changelog;
-      } catch {
-        /* swallow — fallback to created date */
-      }
-    }),
-  );
+  // Always re-fetch (don't trust the search-endpoint version) — the new
+  // /search/jql endpoint silently strips changelog for many issues.
+  const ACTIVE_BUCKETS = new Set(['progress', 'review', 'rft', 'testing', 'rfd', 'onhold', 'blocked']);
+  const toHydrate = allIssues.filter((issue) => {
+    const status = (issue.fields?.status?.name as string) ?? '';
+    return ACTIVE_BUCKETS.has(bucketOf(status as any));
+  });
+  let hydratedOk = 0;
+  let hydratedFail = 0;
+  // Throttle to ~10 parallel to avoid 429s.
+  const CONCURRENCY = 10;
+  for (let i = 0; i < toHydrate.length; i += CONCURRENCY) {
+    const batch = toHydrate.slice(i, i + CONCURRENCY);
+    await Promise.all(
+      batch.map(async (issue) => {
+        try {
+          const full = await client.getIssue(issue.key, { expand: ['changelog'] });
+          if (full.changelog && full.changelog.histories?.length) {
+            issue.changelog = full.changelog;
+            hydratedOk += 1;
+          } else {
+            hydratedFail += 1;
+          }
+        } catch {
+          hydratedFail += 1;
+        }
+      }),
+    );
+  }
+  console.error(`[buildReport] changelog hydrated: ok=${hydratedOk} fail=${hydratedFail} of ${toHydrate.length}`);
 
   const tickets = allIssues.map((i) => enrichIssue(i, now.toISOString()));
 
