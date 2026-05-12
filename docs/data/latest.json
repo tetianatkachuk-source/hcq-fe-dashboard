@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T18:22:36.557Z",
+  "generatedAt": "2026-05-12T20:15:50.762Z",
   "variant": "pulse",
   "sprint": {
     "id": 22089,
@@ -1047,36 +1047,6 @@
       "ruleHits": []
     },
     {
-      "key": "WEB-25953",
-      "summary": "[Security Champion] OneTrust: set up domain betterme-mental-health.com",
-      "type": "Security Sub Task",
-      "status": "Open",
-      "bucket": "todo",
-      "assignee": null,
-      "reporter": "Automation for Jira",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-12T11:24:10.263+0300",
-      "created": "2026-05-12T11:24:07.892+0300",
-      "daysInStatus": 0,
-      "parentKey": "WEB-25952",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        22089,
-        21219
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
       "key": "WEB-25891",
       "summary": "[Security Champion] [Parenting flow] Hardcode scores calculations",
       "type": "Security Sub Task",
@@ -1287,6 +1257,36 @@
       "isRoleTask": false,
       "goalIndex": null,
       "ruleHits": []
+    },
+    {
+      "key": "WEB-25953",
+      "summary": "[Security Champion] OneTrust: set up domain betterme-mental-health.com",
+      "type": "Security Sub Task",
+      "status": "Done Security",
+      "bucket": "todo",
+      "assignee": "Bogdan Sorobei",
+      "reporter": "Automation for Jira",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-12T22:38:39.244+0300",
+      "created": "2026-05-12T11:24:07.892+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25952",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        22089,
+        21219
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     }
   ],
   "devs": [
@@ -1429,7 +1429,7 @@
       "subtaskKey": "WEB-25953",
       "subtaskSummary": "[Security Champion] OneTrust: set up domain betterme-mental-health.com",
       "subtaskType": "Security Sub Task",
-      "subtaskStatus": "Open",
+      "subtaskStatus": "Done Security",
       "parentKey": "WEB-25952",
       "parentStatus": "In Testing",
       "parentBucket": "testing",
