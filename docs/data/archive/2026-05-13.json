@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T14:46:30.720Z",
+  "generatedAt": "2026-05-13T17:20:17.928Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -469,11 +469,6 @@
           "rule": 1,
           "severity": "warn",
           "message": "Under Review 5 дн. без апруву"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 4 активних"
         }
       ]
     },
@@ -624,43 +619,6 @@
       ]
     },
     {
-      "key": "WEB-25936",
-      "summary": "Before-After Rows Type - Text instead of Info",
-      "type": "story bug",
-      "status": "Ready for Testing",
-      "bucket": "rft",
-      "assignee": "Ihor Marha",
-      "reporter": "Anastasiia Kostiuk",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T13:10:12.126+0300",
-      "created": "2026-05-11T15:48:30.984+0300",
-      "daysInStatus": 0,
-      "parentKey": "WEB-25438",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 4 активних"
-        }
-      ]
-    },
-    {
       "key": "WEB-25961",
       "summary": "Title styles do not match original design",
       "type": "story bug",
@@ -689,20 +647,14 @@
       ],
       "isRoleTask": false,
       "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 4 активних"
-        }
-      ]
+      "ruleHits": []
     },
     {
       "key": "WEB-25964",
       "summary": "Incorrect value is displayed on UI for choosePlanTitle on dobivashka on mobile",
       "type": "story bug",
-      "status": "Ready for Testing",
-      "bucket": "rft",
+      "status": "Accepted",
+      "bucket": "done",
       "assignee": "Ihor Marha",
       "reporter": "Anastasiia Kostiuk",
       "storyPoints": null,
@@ -711,7 +663,7 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-12T18:14:34.392+0300",
+      "updated": "2026-05-13T18:38:44.362+0300",
       "created": "2026-05-12T16:09:51.282+0300",
       "daysInStatus": 1,
       "parentKey": "WEB-25438",
@@ -726,18 +678,38 @@
       ],
       "isRoleTask": false,
       "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 5,
-          "severity": "warn",
-          "message": "RFT ≥ 1 дн. — pinguvat QA"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 4 активних"
-        }
-      ]
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25936",
+      "summary": "Before-After Rows Type - Text instead of Info",
+      "type": "story bug",
+      "status": "Accepted",
+      "bucket": "done",
+      "assignee": "Ihor Marha",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-13T18:10:36.776+0300",
+      "created": "2026-05-11T15:48:30.984+0300",
+      "daysInStatus": 2,
+      "parentKey": "WEB-25438",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     },
     {
       "key": "WEB-25947",
