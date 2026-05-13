@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T08:51:31.693Z",
+  "generatedAt": "2026-05-13T11:32:59.986Z",
   "variant": "daily",
   "sprint": {
     "id": 22089,
@@ -140,7 +140,9 @@
       "subtaskKeys": [
         "WEB-25794",
         "WEB-25963",
-        "WEB-25974"
+        "WEB-25974",
+        "WEB-25983",
+        "WEB-25985"
       ],
       "blockedByKeys": [],
       "blocksKeys": [],
@@ -156,44 +158,6 @@
           "rule": 2,
           "severity": "warn",
           "message": "перевантаження @Viktoriia Miziukanova: 3 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25780",
-      "summary": "[Parenting flow] Mental Health Companion upsell",
-      "type": "Task",
-      "status": "Under Review",
-      "bucket": "review",
-      "assignee": "Bogdan Sorobei",
-      "reporter": "Serhii Aleksakha",
-      "storyPoints": 8,
-      "qaEstimate": 8,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-12T17:14:08.747+0300",
-      "created": "2026-05-05T13:30:20.019+0300",
-      "daysInStatus": 2,
-      "parentKey": "WEB-25695",
-      "subtaskKeys": [
-        "WEB-25781"
-      ],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        22089,
-        21219
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Bogdan Sorobei: 4 активних"
         }
       ]
     },
@@ -231,6 +195,51 @@
           "rule": 5,
           "severity": "danger",
           "message": "RFT ≥ 7 дн. — pinguvat QA"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Bogdan Sorobei: 4 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25780",
+      "summary": "[Parenting flow] Mental Health Companion upsell",
+      "type": "Task",
+      "status": "In Testing",
+      "bucket": "testing",
+      "assignee": "Bogdan Sorobei",
+      "reporter": "Serhii Aleksakha",
+      "storyPoints": 8,
+      "qaEstimate": 8,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-13T13:20:30.719+0300",
+      "created": "2026-05-05T13:30:20.019+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25695",
+      "subtaskKeys": [
+        "WEB-25781",
+        "WEB-25991"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        22089,
+        21219
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 5,
+          "severity": "danger",
+          "message": "story bug WEB-25991 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25780> блокер: story bug <WEB-25991> → повернути в In Progress"
         },
         {
           "rule": 2,
@@ -509,6 +518,96 @@
       ]
     },
     {
+      "key": "WEB-25991",
+      "summary": "[Companion] UI Issues #1 ",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Bogdan Sorobei",
+      "reporter": "Danylo Ivanushkin",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-13T13:53:26.780+0300",
+      "created": "2026-05-13T13:22:23.225+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25780",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        22089,
+        21219
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25985",
+      "summary": "[Procrastination] 409 error while trying to make a purchase",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Viktoriia Miziukanova",
+      "reporter": "Danylo Ivanushkin",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-13T12:43:23.435+0300",
+      "created": "2026-05-13T12:40:03.980+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25782",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        22089,
+        21219
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25983",
+      "summary": "[Mindful Eating + Procrastination] Analytics issues #1",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Viktoriia Miziukanova",
+      "reporter": "Danylo Ivanushkin",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-13T12:16:06.439+0300",
+      "created": "2026-05-13T12:10:40.203+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25782",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        22089,
+        21219
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
       "key": "WEB-25963",
       "summary": "[Mindful Eating Guide] UI issues #1",
       "type": "story bug",
@@ -522,7 +621,7 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-12T17:43:23.573+0300",
+      "updated": "2026-05-13T12:10:45.078+0300",
       "created": "2026-05-12T15:49:27.324+0300",
       "daysInStatus": 1,
       "parentKey": "WEB-25782",
@@ -1407,13 +1506,24 @@
       "priority": "close-first"
     },
     {
+      "subtaskKey": "WEB-25991",
+      "subtaskSummary": "[Companion] UI Issues #1 ",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25780",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
       "subtaskKey": "WEB-25781",
       "subtaskSummary": "[Security Champion] [Parenting flow] Mental Health Companion upsell",
       "subtaskType": "Security Sub Task",
       "subtaskStatus": "Open",
       "parentKey": "WEB-25780",
-      "parentStatus": "Under Review",
-      "parentBucket": "review",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
       "parentGoalIndex": null,
       "priority": "close-first"
     },
@@ -1450,7 +1560,7 @@
     "devOnHold": 29,
     "devTotal": 72,
     "qaDone": 3,
-    "qaActive": 7,
+    "qaActive": 15,
     "qaTotal": 100,
     "qaDonePct": 3,
     "qaInRft": 0,
@@ -1459,10 +1569,10 @@
   },
   "questions": [
     "Bogdan Sorobei — WEB-25721: RFT ≥ 7 дн. — pinguvat QA",
+    "Bogdan Sorobei — WEB-25780: story bug WEB-25991 відкритий — повернути parent в In Progress",
     "Viktoriia Miziukanova — WEB-25318: перевантаження @Viktoriia Miziukanova: 3 активних",
     "Bogdan Sorobei — WEB-25890: перевантаження @Bogdan Sorobei: 4 активних",
-    "Viktoriia Miziukanova — WEB-25782: перевантаження @Viktoriia Miziukanova: 3 активних",
-    "Bogdan Sorobei — WEB-25780: перевантаження @Bogdan Sorobei: 4 активних"
+    "Viktoriia Miziukanova — WEB-25782: перевантаження @Viktoriia Miziukanova: 3 активних"
   ],
   "smActions": []
 }
