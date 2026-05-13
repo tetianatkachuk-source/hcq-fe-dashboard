@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T17:20:17.928Z",
+  "generatedAt": "2026-05-13T19:18:32.000Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -469,6 +469,11 @@
           "rule": 1,
           "severity": "warn",
           "message": "Under Review 5 дн. без апруву"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Ihor Marha: 3 активних"
         }
       ]
     },
@@ -517,6 +522,43 @@
           "rule": 2,
           "severity": "warn",
           "message": "перевантаження @Mykhailo Sulima: 11 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-26011",
+      "summary": "Skip button is not displayed on /checkout/generated/pilates",
+      "type": "story bug",
+      "status": "Ready for Testing",
+      "bucket": "rft",
+      "assignee": "Ihor Marha",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-13T22:16:36.577+0300",
+      "created": "2026-05-13T17:30:43.138+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25438",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Ihor Marha: 3 активних"
         }
       ]
     },
@@ -647,7 +689,13 @@
       ],
       "isRoleTask": false,
       "goalIndex": null,
-      "ruleHits": []
+      "ruleHits": [
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Ihor Marha: 3 активних"
+        }
+      ]
     },
     {
       "key": "WEB-25964",
@@ -867,37 +915,6 @@
       "ruleHits": []
     },
     {
-      "key": "WEB-26011",
-      "summary": "Skip button is not displayed on /checkout/generated/pilates",
-      "type": "story bug",
-      "status": "Dev Backlog",
-      "bucket": "todo",
-      "assignee": "Ihor Marha",
-      "reporter": "Anastasiia Kostiuk",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T17:30:43.875+0300",
-      "created": "2026-05-13T17:30:43.138+0300",
-      "daysInStatus": 0,
-      "parentKey": "WEB-25438",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
       "key": "WEB-26010",
       "summary": "Unexpected behaviour with the skip button",
       "type": "story bug",
@@ -911,7 +928,7 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-13T17:26:08.141+0300",
+      "updated": "2026-05-13T21:54:42.698+0300",
       "created": "2026-05-13T17:26:07.455+0300",
       "daysInStatus": 0,
       "parentKey": "WEB-25438",
