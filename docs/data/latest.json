@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T08:44:18.097Z",
+  "generatedAt": "2026-05-14T11:17:17.701Z",
   "variant": "pulse",
   "sprint": {
     "id": 22123,
@@ -451,8 +451,8 @@
         "WEB-25961",
         "WEB-25964",
         "WEB-26007",
-        "WEB-26010",
-        "WEB-26011"
+        "WEB-26011",
+        "WEB-26018"
       ],
       "blockedByKeys": [],
       "blocksKeys": [],
@@ -473,7 +473,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 5 активних"
+          "message": "перевантаження @Ihor Marha: 3 активних"
         }
       ]
     },
@@ -522,132 +522,6 @@
           "rule": 2,
           "severity": "warn",
           "message": "перевантаження @Mykhailo Sulima: 11 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25917",
-      "summary": "Shortcodes are not supported in most fields",
-      "type": "story bug",
-      "status": "Ready for Testing",
-      "bucket": "rft",
-      "assignee": "Ihor Marha",
-      "reporter": "Anastasiia Kostiuk",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T22:44:44.405+0300",
-      "created": "2026-05-08T17:26:37.634+0300",
-      "daysInStatus": 1,
-      "parentKey": "WEB-25438",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 5,
-          "severity": "warn",
-          "message": "RFT ≥ 1 дн. — pinguvat QA"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 5 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-26007",
-      "summary": "Missing padding on the trial page content wrapper",
-      "type": "story bug",
-      "status": "Ready for Testing",
-      "bucket": "rft",
-      "assignee": "Ihor Marha",
-      "reporter": "Anastasiia Kostiuk",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T22:43:08.835+0300",
-      "created": "2026-05-13T16:22:59.134+0300",
-      "daysInStatus": 1,
-      "parentKey": "WEB-25438",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 5,
-          "severity": "warn",
-          "message": "RFT ≥ 1 дн. — pinguvat QA"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 5 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-26011",
-      "summary": "Skip button is not displayed on /checkout/generated/pilates",
-      "type": "story bug",
-      "status": "Ready for Testing",
-      "bucket": "rft",
-      "assignee": "Ihor Marha",
-      "reporter": "Anastasiia Kostiuk",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T22:16:36.577+0300",
-      "created": "2026-05-13T17:30:43.138+0300",
-      "daysInStatus": 1,
-      "parentKey": "WEB-25438",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 5,
-          "severity": "warn",
-          "message": "RFT ≥ 1 дн. — pinguvat QA"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 5 активних"
         }
       ]
     },
@@ -753,8 +627,8 @@
       "key": "WEB-25961",
       "summary": "Title styles do not match original design",
       "type": "story bug",
-      "status": "Ready for Testing",
-      "bucket": "rft",
+      "status": "Returned from Testing",
+      "bucket": "testing",
       "assignee": "Ihor Marha",
       "reporter": "Anastasiia Kostiuk",
       "storyPoints": null,
@@ -763,9 +637,9 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-13T11:55:25.483+0300",
+      "updated": "2026-05-14T13:10:26.086+0300",
       "created": "2026-05-12T15:01:59.455+0300",
-      "daysInStatus": 1,
+      "daysInStatus": 0,
       "parentKey": "WEB-25438",
       "subtaskKeys": [],
       "blockedByKeys": [],
@@ -780,16 +654,110 @@
       "goalIndex": null,
       "ruleHits": [
         {
-          "rule": 5,
+          "rule": 2,
           "severity": "warn",
-          "message": "RFT ≥ 1 дн. — pinguvat QA"
-        },
+          "message": "перевантаження @Ihor Marha: 3 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-26007",
+      "summary": "Missing padding on the trial page content wrapper",
+      "type": "story bug",
+      "status": "Returned from Testing",
+      "bucket": "testing",
+      "assignee": "Ihor Marha",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T13:08:32.502+0300",
+      "created": "2026-05-13T16:22:59.134+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25438",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 5 активних"
+          "message": "перевантаження @Ihor Marha: 3 активних"
         }
       ]
+    },
+    {
+      "key": "WEB-26011",
+      "summary": "Skip button is not displayed on /checkout/generated/pilates",
+      "type": "story bug",
+      "status": "Accepted",
+      "bucket": "done",
+      "assignee": "Ihor Marha",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T13:25:41.245+0300",
+      "created": "2026-05-13T17:30:43.138+0300",
+      "daysInStatus": 1,
+      "parentKey": "WEB-25438",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-25917",
+      "summary": "Shortcodes are not supported in most fields",
+      "type": "story bug",
+      "status": "Accepted",
+      "bucket": "done",
+      "assignee": "Ihor Marha",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T13:25:22.467+0300",
+      "created": "2026-05-08T17:26:37.634+0300",
+      "daysInStatus": 4,
+      "parentKey": "WEB-25438",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     },
     {
       "key": "WEB-25964",
@@ -1009,8 +977,8 @@
       "ruleHits": []
     },
     {
-      "key": "WEB-26010",
-      "summary": "Unexpected behaviour with the skip button",
+      "key": "WEB-26018",
+      "summary": "Dobivashka title width is incorrect",
       "type": "story bug",
       "status": "Dev Backlog",
       "bucket": "todo",
@@ -1022,10 +990,41 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-13T21:54:42.698+0300",
+      "updated": "2026-05-14T13:30:33.898+0300",
+      "created": "2026-05-14T13:30:32.798+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25438",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-26010",
+      "summary": "Unexpected behaviour with the skip button",
+      "type": "Bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Ihor Marha",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T13:11:41.342+0300",
       "created": "2026-05-13T17:26:07.455+0300",
       "daysInStatus": 1,
-      "parentKey": "WEB-25438",
+      "parentKey": null,
       "subtaskKeys": [],
       "blockedByKeys": [],
       "blocksKeys": [],
