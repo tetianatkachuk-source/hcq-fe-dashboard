@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T13:16:57.171Z",
+  "generatedAt": "2026-05-14T15:41:49.088Z",
   "variant": "pulse",
   "sprint": {
     "id": 22123,
@@ -13,6 +13,44 @@
   "verdictSummary": "",
   "goals": [],
   "tickets": [
+    {
+      "key": "WEB-24879",
+      "summary": "Потрібно додати копіювання в таску в Jira, той опис який робить cursor в Pull requests",
+      "type": "Task",
+      "status": "In Progress",
+      "bucket": "progress",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Mykhailo Mykhailenko",
+      "storyPoints": 5,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T16:51:14.786+0300",
+      "created": "2026-03-18T13:12:25.888+0200",
+      "daysInStatus": 41,
+      "parentKey": null,
+      "subtaskKeys": [
+        "WEB-25750"
+      ],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
+        }
+      ]
+    },
     {
       "key": "WEB-25072",
       "summary": "[Sections] Dynamic premium pack page",
@@ -84,252 +122,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25186",
-      "summary": "[Post Release] Premium Pack",
-      "type": "Task",
-      "status": "Under Review",
-      "bucket": "review",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Maksym Kuzmenko",
-      "storyPoints": 2,
-      "qaEstimate": 5,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T16:35:52.169+0300",
-      "created": "2026-04-03T12:29:31.954+0300",
-      "daysInStatus": 8,
-      "parentKey": "WEB-25181",
-      "subtaskKeys": [],
-      "blockedByKeys": [
-        "WCN-3620"
-      ],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 1,
-          "severity": "warn",
-          "message": "Under Review 8 дн. без апруву"
-        },
-        {
-          "rule": 6,
-          "severity": "warn",
-          "message": "зв'язки blocked by: WCN-3620 (cross-project)"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25185",
-      "summary": "[Post Release] E-comm Upsell",
-      "type": "Task",
-      "status": "Under Review",
-      "bucket": "review",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Maksym Kuzmenko",
-      "storyPoints": 2,
-      "qaEstimate": 5,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T16:35:50.479+0300",
-      "created": "2026-04-03T12:29:28.747+0300",
-      "daysInStatus": 8,
-      "parentKey": "WEB-25181",
-      "subtaskKeys": [],
-      "blockedByKeys": [
-        "WCN-3619"
-      ],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 1,
-          "severity": "warn",
-          "message": "Under Review 8 дн. без апруву"
-        },
-        {
-          "rule": 6,
-          "severity": "warn",
-          "message": "зв'язки blocked by: WCN-3619 (cross-project)"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25184",
-      "summary": "[Post Release] Checkout",
-      "type": "Task",
-      "status": "Under Review",
-      "bucket": "review",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Maksym Kuzmenko",
-      "storyPoints": 2,
-      "qaEstimate": 5,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T16:35:50.231+0300",
-      "created": "2026-04-03T12:29:25.386+0300",
-      "daysInStatus": 17,
-      "parentKey": "WEB-25181",
-      "subtaskKeys": [],
-      "blockedByKeys": [
-        "WCN-3509"
-      ],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 1,
-          "severity": "warn",
-          "message": "Under Review 17 дн. без апруву"
-        },
-        {
-          "rule": 6,
-          "severity": "warn",
-          "message": "зв'язки blocked by: WCN-3509 (cross-project)"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25183",
-      "summary": "[Post Release] First Page",
-      "type": "Task",
-      "status": "Under Review",
-      "bucket": "review",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Maksym Kuzmenko",
-      "storyPoints": 2,
-      "qaEstimate": 5,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T16:35:50.008+0300",
-      "created": "2026-04-03T12:29:21.986+0300",
-      "daysInStatus": 17,
-      "parentKey": "WEB-25181",
-      "subtaskKeys": [],
-      "blockedByKeys": [
-        "WCN-3507"
-      ],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 1,
-          "severity": "warn",
-          "message": "Under Review 17 дн. без апруву"
-        },
-        {
-          "rule": 6,
-          "severity": "warn",
-          "message": "зв'язки blocked by: WCN-3507 (cross-project)"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25182",
-      "summary": "[Post Release] Purchase",
-      "type": "Task",
-      "status": "Under Review",
-      "bucket": "review",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Maksym Kuzmenko",
-      "storyPoints": 2,
-      "qaEstimate": 5,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T16:35:49.247+0300",
-      "created": "2026-04-03T12:29:17.632+0300",
-      "daysInStatus": 8,
-      "parentKey": "WEB-25181",
-      "subtaskKeys": [],
-      "blockedByKeys": [
-        "WCN-3533"
-      ],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 1,
-          "severity": "warn",
-          "message": "Under Review 8 дн. без апруву"
-        },
-        {
-          "rule": 6,
-          "severity": "warn",
-          "message": "зв'язки blocked by: WCN-3533 (cross-project)"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
         }
       ]
     },
@@ -373,7 +166,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
         }
       ]
     },
@@ -417,7 +210,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
         }
       ]
     },
@@ -469,20 +262,15 @@
           "rule": 1,
           "severity": "warn",
           "message": "Under Review 6 дн. без апруву"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 3 активних"
         }
       ]
     },
     {
-      "key": "WEB-25187",
-      "summary": "[Post Release] Upsell",
+      "key": "WEB-25182",
+      "summary": "[Post Release] Purchase",
       "type": "Task",
-      "status": "Under Review",
-      "bucket": "review",
+      "status": "Ready for Testing",
+      "bucket": "rft",
       "assignee": "Mykhailo Sulima",
       "reporter": "Maksym Kuzmenko",
       "storyPoints": 2,
@@ -491,9 +279,97 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-13T16:35:48.211+0300",
+      "updated": "2026-05-14T16:51:09.081+0300",
+      "created": "2026-04-03T12:29:17.632+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25181",
+      "subtaskKeys": [],
+      "blockedByKeys": [
+        "WCN-3533"
+      ],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 6,
+          "severity": "warn",
+          "message": "зв'язки blocked by: WCN-3533 (cross-project)"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25184",
+      "summary": "[Post Release] Checkout",
+      "type": "Task",
+      "status": "Ready for Testing",
+      "bucket": "rft",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Maksym Kuzmenko",
+      "storyPoints": 2,
+      "qaEstimate": 5,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T16:51:00.773+0300",
+      "created": "2026-04-03T12:29:25.386+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25181",
+      "subtaskKeys": [],
+      "blockedByKeys": [
+        "WCN-3509"
+      ],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 6,
+          "severity": "warn",
+          "message": "зв'язки blocked by: WCN-3509 (cross-project)"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25187",
+      "summary": "[Post Release] Upsell",
+      "type": "Task",
+      "status": "Ready for Testing",
+      "bucket": "rft",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Maksym Kuzmenko",
+      "storyPoints": 2,
+      "qaEstimate": 5,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T16:50:55.736+0300",
       "created": "2026-04-03T12:29:35.099+0300",
-      "daysInStatus": 8,
+      "daysInStatus": 0,
       "parentKey": "WEB-25181",
       "subtaskKeys": [],
       "blockedByKeys": [
@@ -509,11 +385,6 @@
       "goalIndex": null,
       "ruleHits": [
         {
-          "rule": 1,
-          "severity": "warn",
-          "message": "Under Review 8 дн. без апруву"
-        },
-        {
           "rule": 6,
           "severity": "warn",
           "message": "зв'язки blocked by: WCN-3621 (cross-project)"
@@ -521,7 +392,139 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25186",
+      "summary": "[Post Release] Premium Pack",
+      "type": "Task",
+      "status": "Ready for Testing",
+      "bucket": "rft",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Maksym Kuzmenko",
+      "storyPoints": 2,
+      "qaEstimate": 5,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T16:50:50.861+0300",
+      "created": "2026-04-03T12:29:31.954+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25181",
+      "subtaskKeys": [],
+      "blockedByKeys": [
+        "WCN-3620"
+      ],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 6,
+          "severity": "warn",
+          "message": "зв'язки blocked by: WCN-3620 (cross-project)"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25185",
+      "summary": "[Post Release] E-comm Upsell",
+      "type": "Task",
+      "status": "Ready for Testing",
+      "bucket": "rft",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Maksym Kuzmenko",
+      "storyPoints": 2,
+      "qaEstimate": 5,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T16:50:44.435+0300",
+      "created": "2026-04-03T12:29:28.747+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25181",
+      "subtaskKeys": [],
+      "blockedByKeys": [
+        "WCN-3619"
+      ],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 6,
+          "severity": "warn",
+          "message": "зв'язки blocked by: WCN-3619 (cross-project)"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25183",
+      "summary": "[Post Release] First Page",
+      "type": "Task",
+      "status": "Ready for Testing",
+      "bucket": "rft",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Maksym Kuzmenko",
+      "storyPoints": 2,
+      "qaEstimate": 5,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T16:50:38.693+0300",
+      "created": "2026-04-03T12:29:21.986+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25181",
+      "subtaskKeys": [],
+      "blockedByKeys": [
+        "WCN-3507"
+      ],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 6,
+          "severity": "warn",
+          "message": "зв'язки blocked by: WCN-3507 (cross-project)"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
         }
       ]
     },
@@ -564,7 +567,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
         }
       ]
     },
@@ -619,16 +622,47 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 12 активних"
         }
       ]
+    },
+    {
+      "key": "WEB-26018",
+      "summary": "Dobivashka title width is incorrect",
+      "type": "story bug",
+      "status": "Accepted",
+      "bucket": "done",
+      "assignee": "Maksym Kuzmenko",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-14T17:06:08.015+0300",
+      "created": "2026-05-14T13:30:32.798+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25438",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     },
     {
       "key": "WEB-25961",
       "summary": "Title styles do not match original design",
       "type": "story bug",
-      "status": "Returned from Testing",
-      "bucket": "testing",
+      "status": "Accepted",
+      "bucket": "done",
       "assignee": "Ihor Marha",
       "reporter": "Anastasiia Kostiuk",
       "storyPoints": null,
@@ -637,9 +671,9 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-14T13:10:26.086+0300",
+      "updated": "2026-05-14T17:05:50.667+0300",
       "created": "2026-05-12T15:01:59.455+0300",
-      "daysInStatus": 0,
+      "daysInStatus": 2,
       "parentKey": "WEB-25438",
       "subtaskKeys": [],
       "blockedByKeys": [],
@@ -652,20 +686,14 @@
       ],
       "isRoleTask": false,
       "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 3 активних"
-        }
-      ]
+      "ruleHits": []
     },
     {
       "key": "WEB-26007",
       "summary": "Missing padding on the trial page content wrapper",
       "type": "story bug",
-      "status": "Returned from Testing",
-      "bucket": "testing",
+      "status": "Accepted",
+      "bucket": "done",
       "assignee": "Ihor Marha",
       "reporter": "Anastasiia Kostiuk",
       "storyPoints": null,
@@ -674,9 +702,9 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-14T13:08:32.502+0300",
+      "updated": "2026-05-14T17:05:34.095+0300",
       "created": "2026-05-13T16:22:59.134+0300",
-      "daysInStatus": 0,
+      "daysInStatus": 1,
       "parentKey": "WEB-25438",
       "subtaskKeys": [],
       "blockedByKeys": [],
@@ -689,13 +717,7 @@
       ],
       "isRoleTask": false,
       "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Ihor Marha: 3 активних"
-        }
-      ]
+      "ruleHits": []
     },
     {
       "key": "WEB-26011",
@@ -977,37 +999,6 @@
       "ruleHits": []
     },
     {
-      "key": "WEB-26018",
-      "summary": "Dobivashka title width is incorrect",
-      "type": "story bug",
-      "status": "Dev Backlog",
-      "bucket": "todo",
-      "assignee": "Ihor Marha",
-      "reporter": "Anastasiia Kostiuk",
-      "storyPoints": null,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-14T13:30:33.898+0300",
-      "created": "2026-05-14T13:30:32.798+0300",
-      "daysInStatus": 0,
-      "parentKey": "WEB-25438",
-      "subtaskKeys": [],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": []
-    },
-    {
       "key": "WEB-26010",
       "summary": "Unexpected behaviour with the skip button",
       "type": "Bug",
@@ -1132,44 +1123,6 @@
       "isRoleTask": true,
       "goalIndex": null,
       "ruleHits": []
-    },
-    {
-      "key": "WEB-24879",
-      "summary": "Потрібно додати копіювання в таску в Jira, той опис який робить cursor в Pull requests",
-      "type": "Task",
-      "status": "On hold",
-      "bucket": "onhold",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Mykhailo Mykhailenko",
-      "storyPoints": 5,
-      "qaEstimate": null,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-13T16:35:52.418+0300",
-      "created": "2026-03-18T13:12:25.888+0200",
-      "daysInStatus": 1,
-      "parentKey": null,
-      "subtaskKeys": [
-        "WEB-25750"
-      ],
-      "blockedByKeys": [],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 8,
-          "severity": "warn",
-          "message": "On hold 1 дн. без апдейту"
-        }
-      ]
     },
     {
       "key": "WEB-25903",
@@ -1488,96 +1441,6 @@
   ],
   "blockers": [
     {
-      "key": "WEB-25186",
-      "summary": "[Post Release] Premium Pack",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "cross_team",
-      "blockerKey": "WCN-3620",
-      "note": "blocked by WCN-3620 (cross-team) — Dev Backlog"
-    },
-    {
-      "key": "WEB-25186",
-      "summary": "[Post Release] Premium Pack",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "under_review_stale",
-      "blockerKey": null,
-      "note": "UR 8 дн. без апруву"
-    },
-    {
-      "key": "WEB-25185",
-      "summary": "[Post Release] E-comm Upsell",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "cross_team",
-      "blockerKey": "WCN-3619",
-      "note": "blocked by WCN-3619 (cross-team) — Dev Backlog"
-    },
-    {
-      "key": "WEB-25185",
-      "summary": "[Post Release] E-comm Upsell",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "under_review_stale",
-      "blockerKey": null,
-      "note": "UR 8 дн. без апруву"
-    },
-    {
-      "key": "WEB-25184",
-      "summary": "[Post Release] Checkout",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "cross_team",
-      "blockerKey": "WCN-3509",
-      "note": "blocked by WCN-3509 (cross-team) — On hold"
-    },
-    {
-      "key": "WEB-25184",
-      "summary": "[Post Release] Checkout",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "under_review_stale",
-      "blockerKey": null,
-      "note": "UR 17 дн. без апруву"
-    },
-    {
-      "key": "WEB-25183",
-      "summary": "[Post Release] First Page",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "cross_team",
-      "blockerKey": "WCN-3507",
-      "note": "blocked by WCN-3507 (cross-team) — On hold"
-    },
-    {
-      "key": "WEB-25183",
-      "summary": "[Post Release] First Page",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "under_review_stale",
-      "blockerKey": null,
-      "note": "UR 17 дн. без апруву"
-    },
-    {
-      "key": "WEB-25182",
-      "summary": "[Post Release] Purchase",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "cross_team",
-      "blockerKey": "WCN-3533",
-      "note": "blocked by WCN-3533 (cross-team) — Dev Backlog"
-    },
-    {
-      "key": "WEB-25182",
-      "summary": "[Post Release] Purchase",
-      "status": "Under Review",
-      "assignee": "Mykhailo Sulima",
-      "reason": "under_review_stale",
-      "blockerKey": null,
-      "note": "UR 8 дн. без апруву"
-    },
-    {
       "key": "WEB-25486",
       "summary": "AI Navigation Guide Setup ",
       "status": "Under Review",
@@ -1605,22 +1468,58 @@
       "note": "UR 6 дн. без апруву"
     },
     {
+      "key": "WEB-25182",
+      "summary": "[Post Release] Purchase",
+      "status": "Ready for Testing",
+      "assignee": "Mykhailo Sulima",
+      "reason": "cross_team",
+      "blockerKey": "WCN-3533",
+      "note": "blocked by WCN-3533 (cross-team) — Dev Backlog"
+    },
+    {
+      "key": "WEB-25184",
+      "summary": "[Post Release] Checkout",
+      "status": "Ready for Testing",
+      "assignee": "Mykhailo Sulima",
+      "reason": "cross_team",
+      "blockerKey": "WCN-3509",
+      "note": "blocked by WCN-3509 (cross-team) — On hold"
+    },
+    {
       "key": "WEB-25187",
       "summary": "[Post Release] Upsell",
-      "status": "Under Review",
+      "status": "Ready for Testing",
       "assignee": "Mykhailo Sulima",
       "reason": "cross_team",
       "blockerKey": "WCN-3621",
       "note": "blocked by WCN-3621 (cross-team) — Dev Backlog"
     },
     {
-      "key": "WEB-25187",
-      "summary": "[Post Release] Upsell",
-      "status": "Under Review",
+      "key": "WEB-25186",
+      "summary": "[Post Release] Premium Pack",
+      "status": "Ready for Testing",
       "assignee": "Mykhailo Sulima",
-      "reason": "under_review_stale",
-      "blockerKey": null,
-      "note": "UR 8 дн. без апруву"
+      "reason": "cross_team",
+      "blockerKey": "WCN-3620",
+      "note": "blocked by WCN-3620 (cross-team) — Dev Backlog"
+    },
+    {
+      "key": "WEB-25185",
+      "summary": "[Post Release] E-comm Upsell",
+      "status": "Ready for Testing",
+      "assignee": "Mykhailo Sulima",
+      "reason": "cross_team",
+      "blockerKey": "WCN-3619",
+      "note": "blocked by WCN-3619 (cross-team) — Dev Backlog"
+    },
+    {
+      "key": "WEB-25183",
+      "summary": "[Post Release] First Page",
+      "status": "Ready for Testing",
+      "assignee": "Mykhailo Sulima",
+      "reason": "cross_team",
+      "blockerKey": "WCN-3507",
+      "note": "blocked by WCN-3507 (cross-team) — On hold"
     }
   ],
   "subtasks": [
@@ -1696,23 +1595,23 @@
   "releasePressure": [],
   "velocity": {
     "devDone": 0,
-    "devActive": 71,
-    "devOnHold": 5,
+    "devActive": 76,
+    "devOnHold": 0,
     "devTotal": 76,
     "qaDone": 0,
     "qaActive": 0,
     "qaTotal": 56,
     "qaDonePct": 0,
-    "qaInRft": 8,
+    "qaInRft": 38,
     "qaOnHold": 0,
     "forecast": ""
   },
   "questions": [
     "Mykhailo Sulima — WEB-25811: RFT ≥ 3 дн. — pinguvat QA",
     "Mykhailo Sulima — WEB-24019: RFT ≥ 4 дн. — pinguvat QA",
-    "Mykhailo Sulima — WEB-25658: перевантаження @Mykhailo Sulima: 11 активних",
-    "Mykhailo Sulima — WEB-25186: Under Review 8 дн. без апруву",
-    "Mykhailo Sulima — WEB-25186: зв'язки blocked by: WCN-3620 (cross-project)"
+    "Mykhailo Sulima — WEB-24879: перевантаження @Mykhailo Sulima: 12 активних",
+    "Mykhailo Sulima — WEB-25658: перевантаження @Mykhailo Sulima: 12 активних",
+    "Mykhailo Sulima — WEB-25486: Under Review 20 дн. без апруву"
   ],
   "smActions": []
 }
