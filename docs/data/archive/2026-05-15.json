@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T08:55:09.778Z",
+  "generatedAt": "2026-05-15T11:24:32.637Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -605,8 +605,8 @@
       "key": "WEB-24019",
       "summary": "Eliminate brand-palette",
       "type": "Task",
-      "status": "Ready for Testing",
-      "bucket": "rft",
+      "status": "In Testing",
+      "bucket": "testing",
       "assignee": "Mykhailo Sulima",
       "reporter": "Maksym Kuzmenko",
       "storyPoints": 8,
@@ -615,9 +615,9 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-13T16:35:48.217+0300",
+      "updated": "2026-05-15T12:43:28.077+0300",
       "created": "2026-01-28T15:11:39.993+0200",
-      "daysInStatus": 5,
+      "daysInStatus": 0,
       "parentKey": null,
       "subtaskKeys": [
         "WEB-24062"
@@ -639,11 +639,6 @@
       "isRoleTask": false,
       "goalIndex": null,
       "ruleHits": [
-        {
-          "rule": 5,
-          "severity": "danger",
-          "message": "RFT ≥ 5 дн. — pinguvat QA"
-        },
         {
           "rule": 6,
           "severity": "warn",
@@ -1559,8 +1554,8 @@
       "subtaskType": "Security Sub Task",
       "subtaskStatus": "Open",
       "parentKey": "WEB-24019",
-      "parentStatus": "Ready for Testing",
-      "parentBucket": "rft",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
       "parentGoalIndex": null,
       "priority": "close-first"
     },
@@ -1629,19 +1624,19 @@
     "devOnHold": 0,
     "devTotal": 76,
     "qaDone": 0,
-    "qaActive": 0,
+    "qaActive": 5,
     "qaTotal": 56,
     "qaDonePct": 0,
-    "qaInRft": 38,
+    "qaInRft": 33,
     "qaOnHold": 0,
     "forecast": ""
   },
   "questions": [
     "Mykhailo Sulima — WEB-25811: RFT ≥ 4 дн. — pinguvat QA",
-    "Mykhailo Sulima — WEB-24019: RFT ≥ 5 дн. — pinguvat QA",
     "Mykhailo Sulima — WEB-24879: перевантаження @Mykhailo Sulima: 12 активних",
     "Mykhailo Sulima — WEB-25658: перевантаження @Mykhailo Sulima: 12 активних",
-    "Mykhailo Sulima — WEB-25486: Under Review 21 дн. без апруву"
+    "Mykhailo Sulima — WEB-25486: Under Review 21 дн. без апруву",
+    "Mykhailo Sulima — WEB-25486: перевантаження @Mykhailo Sulima: 12 активних"
   ],
   "smActions": []
 }
