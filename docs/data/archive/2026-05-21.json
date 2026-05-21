@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T12:48:35.194Z",
+  "generatedAt": "2026-05-21T16:18:37.230Z",
   "variant": "pulse",
   "sprint": {
     "id": 22123,
@@ -389,7 +389,7 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-20T17:06:58.970+0300",
+      "updated": "2026-05-21T18:22:27.923+0300",
       "created": "2026-04-03T12:29:17.632+0300",
       "daysInStatus": 1,
       "parentKey": "WEB-25181",
