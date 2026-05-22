@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T09:38:02.206Z",
+  "generatedAt": "2026-05-22T12:26:03.337Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -89,7 +89,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -133,7 +133,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -182,7 +182,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -230,7 +230,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -279,7 +279,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -328,7 +328,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -371,51 +371,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25182",
-      "summary": "[Post Release] Purchase",
-      "type": "Task",
-      "status": "In Testing",
-      "bucket": "testing",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Maksym Kuzmenko",
-      "storyPoints": 2,
-      "qaEstimate": 5,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-21T18:22:27.923+0300",
-      "created": "2026-04-03T12:29:17.632+0300",
-      "daysInStatus": 2,
-      "parentKey": "WEB-25181",
-      "subtaskKeys": [],
-      "blockedByKeys": [
-        "WCN-3533"
-      ],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 6,
-          "severity": "warn",
-          "message": "зв'язки blocked by: WCN-3533 (cross-project)"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -459,7 +415,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -509,7 +465,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -548,7 +504,7 @@
         {
           "rule": 2,
           "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 11 активних"
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
         }
       ]
     },
@@ -968,6 +924,45 @@
       "isRoleTask": false,
       "goalIndex": null,
       "ruleHits": []
+    },
+    {
+      "key": "WEB-25182",
+      "summary": "[Post Release] Purchase",
+      "type": "Task",
+      "status": "Ready for deploy",
+      "bucket": "todo",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Maksym Kuzmenko",
+      "storyPoints": 2,
+      "qaEstimate": 5,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-22T14:45:50.644+0300",
+      "created": "2026-04-03T12:29:17.632+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25181",
+      "subtaskKeys": [],
+      "blockedByKeys": [
+        "WCN-3533"
+      ],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 6,
+          "severity": "warn",
+          "message": "зв'язки blocked by: WCN-3533 (cross-project)"
+        }
+      ]
     },
     {
       "key": "WEB-26010",
@@ -1504,15 +1499,6 @@
       "note": "blocked by WCN-3619 (cross-team) — Dev Backlog"
     },
     {
-      "key": "WEB-25182",
-      "summary": "[Post Release] Purchase",
-      "status": "In Testing",
-      "assignee": "Mykhailo Sulima",
-      "reason": "cross_team",
-      "blockerKey": "WCN-3533",
-      "note": "blocked by WCN-3533 (cross-team) — Dev Backlog"
-    },
-    {
       "key": "WEB-25183",
       "summary": "[Post Release] First Page",
       "status": "In Testing",
@@ -1520,6 +1506,15 @@
       "reason": "cross_team",
       "blockerKey": "WCN-3507",
       "note": "blocked by WCN-3507 (cross-team) — On hold"
+    },
+    {
+      "key": "WEB-25182",
+      "summary": "[Post Release] Purchase",
+      "status": "Ready for deploy",
+      "assignee": "Mykhailo Sulima",
+      "reason": "cross_team",
+      "blockerKey": "WCN-3533",
+      "note": "blocked by WCN-3533 (cross-team) — Dev Backlog"
     },
     {
       "key": "WEB-24879",
@@ -1605,16 +1600,16 @@
   "releasePressure": [],
   "velocity": {
     "devDone": 21,
-    "devActive": 50,
+    "devActive": 48,
     "devOnHold": 5,
-    "devTotal": 76,
+    "devTotal": 74,
     "qaDone": 0,
-    "qaActive": 20,
+    "qaActive": 15,
     "qaTotal": 56,
     "qaDonePct": 0,
     "qaInRft": 23,
     "qaOnHold": 0,
-    "forecast": "Прогноз закриття за поточним темпом: ~29 SP / 76 SP у спринті."
+    "forecast": "Прогноз закриття за поточним темпом: ~29 SP / 74 SP у спринті."
   },
   "questions": [
     "Mykhailo Sulima — WEB-25184: RFT ≥ 6 дн. — pinguvat QA",
