@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T15:36:59.938Z",
+  "generatedAt": "2026-05-22T17:57:28.950Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -389,13 +389,17 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-22T15:35:20.560+0300",
+      "updated": "2026-05-22T19:03:25.792+0300",
       "created": "2026-04-03T12:29:21.986+0300",
       "daysInStatus": 2,
       "parentKey": "WEB-25181",
       "subtaskKeys": [
         "WEB-26222",
-        "WEB-26223"
+        "WEB-26223",
+        "WEB-26224",
+        "WEB-26225",
+        "WEB-26228",
+        "WEB-26229"
       ],
       "blockedByKeys": [
         "WCN-3507"
@@ -418,6 +422,24 @@
         {
           "rule": 5,
           "severity": "danger",
+          "message": "story bug WEB-26228 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26228> → повернути в In Progress"
+        },
+        {
+          "rule": 5,
+          "severity": "danger",
+          "message": "story bug WEB-26225 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26225> → повернути в In Progress"
+        },
+        {
+          "rule": 5,
+          "severity": "danger",
+          "message": "story bug WEB-26224 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26224> → повернути в In Progress"
+        },
+        {
+          "rule": 5,
+          "severity": "danger",
           "message": "story bug WEB-26223 відкритий — повернути parent в In Progress",
           "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26223> → повернути в In Progress"
         },
@@ -426,6 +448,12 @@
           "severity": "danger",
           "message": "story bug WEB-26222 відкритий — повернути parent в In Progress",
           "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26222> → повернути в In Progress"
+        },
+        {
+          "rule": 5,
+          "severity": "danger",
+          "message": "story bug WEB-26229 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26229> → повернути в In Progress"
         },
         {
           "rule": 2,
@@ -980,12 +1008,12 @@
       ]
     },
     {
-      "key": "WEB-26223",
-      "summary": "/first-page-brand-palette still exists but it's new route returns 404",
+      "key": "WEB-26228",
+      "summary": "New routes for some pages do not work",
       "type": "story bug",
       "status": "Dev Backlog",
       "bucket": "todo",
-      "assignee": "Mykhailo Sulima",
+      "assignee": "Maksym Kuzmenko",
       "reporter": "Anastasiia Kostiuk",
       "storyPoints": null,
       "qaEstimate": null,
@@ -993,7 +1021,100 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-22T18:34:12.315+0300",
+      "updated": "2026-05-22T19:10:30.666+0300",
+      "created": "2026-05-22T19:01:33.798+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25183",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-26225",
+      "summary": "Unexpected behaviour on some pages",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Maksym Kuzmenko",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-22T19:10:27.973+0300",
+      "created": "2026-05-22T18:50:17.484+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25183",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-26224",
+      "summary": "Navigation from onboarding back to the first page leads to old URL",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Maksym Kuzmenko",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-22T19:10:25.143+0300",
+      "created": "2026-05-22T18:44:08.904+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25183",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-26223",
+      "summary": "/first-page-brand-palette still exists but it's new route returns 404",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Maksym Kuzmenko",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-22T19:10:21.897+0300",
       "created": "2026-05-22T18:34:11.987+0300",
       "daysInStatus": 0,
       "parentKey": "WEB-25183",
@@ -1016,6 +1137,37 @@
       "type": "story bug",
       "status": "Dev Backlog",
       "bucket": "todo",
+      "assignee": "Maksym Kuzmenko",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-22T19:10:18.660+0300",
+      "created": "2026-05-22T18:30:28.806+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25183",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-26229",
+      "summary": "Redirect to old URLs from burger FAQs",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
       "assignee": "Mykhailo Sulima",
       "reporter": "Anastasiia Kostiuk",
       "storyPoints": null,
@@ -1024,8 +1176,8 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-22T18:30:29.205+0300",
-      "created": "2026-05-22T18:30:28.806+0300",
+      "updated": "2026-05-22T19:07:50.680+0300",
+      "created": "2026-05-22T19:07:48.298+0300",
       "daysInStatus": 0,
       "parentKey": "WEB-25183",
       "subtaskKeys": [],
@@ -1627,6 +1779,39 @@
       "priority": "close-first"
     },
     {
+      "subtaskKey": "WEB-26228",
+      "subtaskSummary": "New routes for some pages do not work",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25183",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
+      "subtaskKey": "WEB-26225",
+      "subtaskSummary": "Unexpected behaviour on some pages",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25183",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
+      "subtaskKey": "WEB-26224",
+      "subtaskSummary": "Navigation from onboarding back to the first page leads to old URL",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25183",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
       "subtaskKey": "WEB-26223",
       "subtaskSummary": "/first-page-brand-palette still exists but it's new route returns 404",
       "subtaskType": "story bug",
@@ -1640,6 +1825,17 @@
     {
       "subtaskKey": "WEB-26222",
       "subtaskSummary": "No redirects from old URLS to new routes",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25183",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
+      "subtaskKey": "WEB-26229",
+      "subtaskSummary": "Redirect to old URLs from burger FAQs",
       "subtaskType": "story bug",
       "subtaskStatus": "Dev Backlog",
       "parentKey": "WEB-25183",
