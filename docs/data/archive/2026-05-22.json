@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T12:26:03.337Z",
+  "generatedAt": "2026-05-22T15:36:59.938Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -389,11 +389,14 @@
       "releaseDate": null,
       "dueDate": null,
       "priority": "Medium",
-      "updated": "2026-05-20T17:01:29.632+0300",
+      "updated": "2026-05-22T15:35:20.560+0300",
       "created": "2026-04-03T12:29:21.986+0300",
       "daysInStatus": 2,
       "parentKey": "WEB-25181",
-      "subtaskKeys": [],
+      "subtaskKeys": [
+        "WEB-26222",
+        "WEB-26223"
+      ],
       "blockedByKeys": [
         "WCN-3507"
       ],
@@ -411,6 +414,18 @@
           "rule": 6,
           "severity": "warn",
           "message": "зв'язки blocked by: WCN-3507 (cross-project)"
+        },
+        {
+          "rule": 5,
+          "severity": "danger",
+          "message": "story bug WEB-26223 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26223> → повернути в In Progress"
+        },
+        {
+          "rule": 5,
+          "severity": "danger",
+          "message": "story bug WEB-26222 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25183> блокер: story bug <WEB-26222> → повернути в In Progress"
         },
         {
           "rule": 2,
@@ -963,6 +978,68 @@
           "message": "зв'язки blocked by: WCN-3533 (cross-project)"
         }
       ]
+    },
+    {
+      "key": "WEB-26223",
+      "summary": "/first-page-brand-palette still exists but it's new route returns 404",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-22T18:34:12.315+0300",
+      "created": "2026-05-22T18:34:11.987+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25183",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
+    },
+    {
+      "key": "WEB-26222",
+      "summary": "No redirects from old URLS to new routes",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-22T18:30:29.205+0300",
+      "created": "2026-05-22T18:30:28.806+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25183",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     },
     {
       "key": "WEB-26010",
@@ -1545,6 +1622,28 @@
       "subtaskStatus": "Open",
       "parentKey": "WEB-24066",
       "parentStatus": "Returned from Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
+      "subtaskKey": "WEB-26223",
+      "subtaskSummary": "/first-page-brand-palette still exists but it's new route returns 404",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25183",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
+      "subtaskKey": "WEB-26222",
+      "subtaskSummary": "No redirects from old URLS to new routes",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25183",
+      "parentStatus": "In Testing",
       "parentBucket": "testing",
       "parentGoalIndex": null,
       "priority": "close-first"
