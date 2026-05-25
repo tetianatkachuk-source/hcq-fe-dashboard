@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T13:46:18.438Z",
+  "generatedAt": "2026-05-25T16:25:31.923Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -344,7 +344,9 @@
       "created": "2026-04-03T12:29:25.386+0300",
       "daysInStatus": 0,
       "parentKey": "WEB-25181",
-      "subtaskKeys": [],
+      "subtaskKeys": [
+        "WEB-26258"
+      ],
       "blockedByKeys": [
         "WCN-3509"
       ],
@@ -362,6 +364,12 @@
           "rule": 6,
           "severity": "warn",
           "message": "зв'язки blocked by: WCN-3509 (cross-project)"
+        },
+        {
+          "rule": 5,
+          "severity": "danger",
+          "message": "story bug WEB-26258 відкритий — повернути parent в In Progress",
+          "slackMessage": "⛔ До <WEB-25184> блокер: story bug <WEB-26258> → повернути в In Progress"
         },
         {
           "rule": 2,
@@ -1001,6 +1009,37 @@
           "message": "зв'язки blocked by: WCN-3533 (cross-project)"
         }
       ]
+    },
+    {
+      "key": "WEB-26258",
+      "summary": "No dobivashka and trial logic on going back",
+      "type": "story bug",
+      "status": "Dev Backlog",
+      "bucket": "todo",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Anastasiia Kostiuk",
+      "storyPoints": null,
+      "qaEstimate": null,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-25T16:50:43.585+0300",
+      "created": "2026-05-25T16:50:40.838+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25184",
+      "subtaskKeys": [],
+      "blockedByKeys": [],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": []
     },
     {
       "key": "WEB-26228",
@@ -1840,6 +1879,17 @@
       "priority": "close-first"
     },
     {
+      "subtaskKey": "WEB-26258",
+      "subtaskSummary": "No dobivashka and trial logic on going back",
+      "subtaskType": "story bug",
+      "subtaskStatus": "Dev Backlog",
+      "parentKey": "WEB-25184",
+      "parentStatus": "In Testing",
+      "parentBucket": "testing",
+      "parentGoalIndex": null,
+      "priority": "close-first"
+    },
+    {
       "subtaskKey": "WEB-25487",
       "subtaskSummary": "[Security Champion] AI Navigation Guide Setup ",
       "subtaskType": "Security Sub Task",
@@ -1906,7 +1956,7 @@
     "Mykhailo Sulima — WEB-25186: RFT ≥ 7 дн. — pinguvat QA",
     "Mykhailo Sulima — WEB-25185: RFT ≥ 7 дн. — pinguvat QA",
     "Mykhailo Sulima — WEB-25811: RFT ≥ 10 дн. — pinguvat QA",
-    "Mykhailo Sulima — WEB-25183: story bug WEB-26228 відкритий — повернути parent в In Progress"
+    "Mykhailo Sulima — WEB-25184: story bug WEB-26258 відкритий — повернути parent в In Progress"
   ],
   "smActions": []
 }
