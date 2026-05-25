@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T10:19:21.427Z",
+  "generatedAt": "2026-05-25T13:46:18.438Z",
   "variant": "daily",
   "sprint": {
     "id": 22123,
@@ -129,55 +129,6 @@
           "rule": 1,
           "severity": "warn",
           "message": "Under Review 27 дн. без апруву"
-        },
-        {
-          "rule": 2,
-          "severity": "warn",
-          "message": "перевантаження @Mykhailo Sulima: 10 активних"
-        }
-      ]
-    },
-    {
-      "key": "WEB-25184",
-      "summary": "[Post Release] Checkout",
-      "type": "Task",
-      "status": "Ready for Testing",
-      "bucket": "rft",
-      "assignee": "Mykhailo Sulima",
-      "reporter": "Maksym Kuzmenko",
-      "storyPoints": 2,
-      "qaEstimate": 5,
-      "aqaEstimate": null,
-      "releaseDate": null,
-      "dueDate": null,
-      "priority": "Medium",
-      "updated": "2026-05-14T16:51:00.773+0300",
-      "created": "2026-04-03T12:29:25.386+0300",
-      "daysInStatus": 7,
-      "parentKey": "WEB-25181",
-      "subtaskKeys": [],
-      "blockedByKeys": [
-        "WCN-3509"
-      ],
-      "blocksKeys": [],
-      "epicLinkKey": null,
-      "sprintIds": [
-        21285,
-        22123,
-        20612
-      ],
-      "isRoleTask": false,
-      "goalIndex": null,
-      "ruleHits": [
-        {
-          "rule": 5,
-          "severity": "danger",
-          "message": "RFT ≥ 7 дн. — pinguvat QA"
-        },
-        {
-          "rule": 6,
-          "severity": "warn",
-          "message": "зв'язки blocked by: WCN-3509 (cross-project)"
         },
         {
           "rule": 2,
@@ -367,6 +318,50 @@
           "rule": 5,
           "severity": "danger",
           "message": "RFT ≥ 10 дн. — pinguvat QA"
+        },
+        {
+          "rule": 2,
+          "severity": "warn",
+          "message": "перевантаження @Mykhailo Sulima: 10 активних"
+        }
+      ]
+    },
+    {
+      "key": "WEB-25184",
+      "summary": "[Post Release] Checkout",
+      "type": "Task",
+      "status": "In Testing",
+      "bucket": "testing",
+      "assignee": "Mykhailo Sulima",
+      "reporter": "Maksym Kuzmenko",
+      "storyPoints": 2,
+      "qaEstimate": 5,
+      "aqaEstimate": null,
+      "releaseDate": null,
+      "dueDate": null,
+      "priority": "Medium",
+      "updated": "2026-05-25T13:41:30.494+0300",
+      "created": "2026-04-03T12:29:25.386+0300",
+      "daysInStatus": 0,
+      "parentKey": "WEB-25181",
+      "subtaskKeys": [],
+      "blockedByKeys": [
+        "WCN-3509"
+      ],
+      "blocksKeys": [],
+      "epicLinkKey": null,
+      "sprintIds": [
+        21285,
+        22123,
+        20612
+      ],
+      "isRoleTask": false,
+      "goalIndex": null,
+      "ruleHits": [
+        {
+          "rule": 6,
+          "severity": "warn",
+          "message": "зв'язки blocked by: WCN-3509 (cross-project)"
         },
         {
           "rule": 2,
@@ -1692,15 +1687,6 @@
       "note": "UR 27 дн. без апруву"
     },
     {
-      "key": "WEB-25184",
-      "summary": "[Post Release] Checkout",
-      "status": "Ready for Testing",
-      "assignee": "Mykhailo Sulima",
-      "reason": "cross_team",
-      "blockerKey": "WCN-3509",
-      "note": "blocked by WCN-3509 (cross-team) — On hold"
-    },
-    {
       "key": "WEB-25187",
       "summary": "[Post Release] Upsell",
       "status": "Ready for Testing",
@@ -1726,6 +1712,15 @@
       "reason": "cross_team",
       "blockerKey": "WCN-3619",
       "note": "blocked by WCN-3619 (cross-team) — Dev Backlog"
+    },
+    {
+      "key": "WEB-25184",
+      "summary": "[Post Release] Checkout",
+      "status": "In Testing",
+      "assignee": "Mykhailo Sulima",
+      "reason": "cross_team",
+      "blockerKey": "WCN-3509",
+      "note": "blocked by WCN-3509 (cross-team) — On hold"
     },
     {
       "key": "WEB-25183",
@@ -1899,19 +1894,19 @@
     "devOnHold": 5,
     "devTotal": 74,
     "qaDone": 0,
-    "qaActive": 15,
+    "qaActive": 20,
     "qaTotal": 56,
     "qaDonePct": 0,
-    "qaInRft": 23,
+    "qaInRft": 18,
     "qaOnHold": 0,
     "forecast": "Прогноз закриття за поточним темпом: ~23 SP / 74 SP у спринті."
   },
   "questions": [
-    "Mykhailo Sulima — WEB-25184: RFT ≥ 7 дн. — pinguvat QA",
     "Mykhailo Sulima — WEB-25187: RFT ≥ 7 дн. — pinguvat QA",
     "Mykhailo Sulima — WEB-25186: RFT ≥ 7 дн. — pinguvat QA",
     "Mykhailo Sulima — WEB-25185: RFT ≥ 7 дн. — pinguvat QA",
-    "Mykhailo Sulima — WEB-25811: RFT ≥ 10 дн. — pinguvat QA"
+    "Mykhailo Sulima — WEB-25811: RFT ≥ 10 дн. — pinguvat QA",
+    "Mykhailo Sulima — WEB-25183: story bug WEB-26228 відкритий — повернути parent в In Progress"
   ],
   "smActions": []
 }
